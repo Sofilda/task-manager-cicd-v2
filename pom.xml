@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.5.16</version>
+        <relativePath/>
+    </parent>
+
+    <groupId>by.edu.example</groupId>
+    <artifactId>task-manager-cicd</artifactId>
+    <version>1.0.0</version>
+    <name>task-manager-cicd</name>
+    <description>Учебное REST-приложение для ЛР №4 по CI (Jenkins + GitHub Actions), вариант 2</description>
+
+    <properties>
+        <!-- Вариант 2: байт-код уровня Java 17 (class file 61).
+             Такой JAR запускается и на JDK 17, и на JDK 21 — это проверяет Matrix в GitHub Actions.
+             Spring Boot 3.x требует минимум Java 17, поэтому 17 — нижняя граница совместимости. -->
+        <java.version>17</java.version>
+
+        <!-- Позволяет пропустить только модульные тесты (Surefire), не трогая Failsafe:
+             mvn verify -DskipUnitTests=true — используется в Jenkinsfile, чтобы
+             модульные тесты не выполнялись повторно на этапе интеграционных тестов. -->
+        <skipUnitTests>false</skipUnitTests>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <jacoco.version>0.8.15</jacoco.version>
+
+
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <!-- HTTP-клиент для PATCH-запросов в интеграционных тестах -->
+        <dependency>
+            <groupId>org.apache.httpcomponents.client5</groupId>
+            <artifactId>httpclient5</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <!-- Исполняемый JAR: target/task-manager-cicd-1.0.0.jar -->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+
+            <!-- Модульные тесты (*Test.java) на фазе test -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <skip>${skipUnitTests}</skip>
+                    <excludes>
+                        <exclude>**/*IT.java</exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
+
+            <!-- Интеграционные тесты (*IT.java) на фазах integration-test и verify -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-failsafe-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>integration-test</goal>
+                            <goal>verify</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- HTML-отчёт Surefire (mvn surefire-report:report-only) -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-report-plugin</artifactId>
+                <version>${maven-surefire-plugin.version}</version>
+            </plugin>
+
+            <!-- JaCoCo: сбор покрытия и HTML/XML/CSV-отчёт -->
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>${jacoco.version}</version>
+                <configuration>
+                    <excludes>
+                        <!-- Точка входа Spring Boot не содержит логики -->
+                        <exclude>by/edu/example/taskmanager/TaskManagerApplication.class</exclude>
+                    </excludes>
+                </configuration>
+                <executions>
+                    <!-- Подключает агент JaCoCo к JVM Surefire и Failsafe (через argLine) -->
+                    <execution>
+                        <id>prepare-agent</id>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
+                    <!-- HTML/XML/CSV-отчёт после модульных и интеграционных тестов -->
+                    <execution>
+                        <id>report</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>report</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
