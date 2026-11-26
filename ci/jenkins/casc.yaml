@@ -1,0 +1,20 @@
+jenkins:
+  systemMessage: "ЛР №4, вариант 2 — учебный стенд Jenkins (Веремчук В. С., гр. 472302)"
+  numExecutors: 2
+  mode: NORMAL
+  # Стенд одноразовый и недоступен извне: вход без авторизации.
+  authorizationStrategy: unsecured
+  securityRealm: none
+tool:
+  # Те же имена инструментов, что и в Jenkinsfile (tools { jdk 'jdk21'; maven 'maven3' })
+  jdk:
+    installations:
+      - name: jdk21
+        home: /opt/java/openjdk
+  maven:
+    installations:
+      - name: maven3
+        home: /usr/share/maven
+unclassified:
+  location:
+    url: "http://localhost:8080/"
