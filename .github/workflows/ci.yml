@@ -1,0 +1,139 @@
+# Лабораторная работа №4, вариант 2.
+# Основа: Workflow из методического пособия (часть 2).
+# Индивидуальное задание, часть 2 (вариант 2):
+#   Matrix-проверка проекта на двух версиях JDK (17 и 21) с обоснованием совместимости.
+#   - один Job описан один раз, GitHub создаёт два параллельных выполнения: JDK 17 и JDK 21;
+#   - fail-fast: false — падение одной версии не отменяет проверку другой;
+#   - шаг «Check bytecode level» доказывает, что классы собраны под Java 17 (class file 61);
+#   - отдельный Job compatibility-summary собирает итог по обеим версиям;
+#   - ручной запуск позволяет поменять уровень байт-кода (java_release) и увидеть,
+#     что сборка под Java 21 несовместима с JDK 17.
+
+name: Java Application CI
+
+on:
+  push:
+    branches:
+      - main
+      - "feature/**"
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+    inputs:
+      java_release:
+        description: 'Уровень байт-кода (maven.compiler.release): 17 — совместим с обеими JDK, 21 — только с JDK 21'
+        required: true
+        type: choice
+        options:
+          - '17'
+          - '21'
+        default: '17'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: java-ci-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  # При push / pull_request inputs пусты — используется 17 из pom.xml.
+  JAVA_RELEASE: ${{ inputs.java_release || '17' }}
+
+jobs:
+  build:
+    name: Build and test (JDK ${{ matrix.java }})
+    runs-on: windows-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        java: ['17', '21']
+
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+
+      - name: Set up JDK ${{ matrix.java }}
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: ${{ matrix.java }}
+          cache: maven
+
+      - name: Show toolchain
+        shell: pwsh
+        run: |
+          java -version
+          mvn -version
+          Write-Host "Target bytecode level (java.version): $env:JAVA_RELEASE"
+
+      - name: Build and test
+        shell: pwsh
+        run: mvn -B -ntp clean verify "-Djava.version=${{ env.JAVA_RELEASE }}"
+
+      # Обоснование совместимости: class file major version 61 = Java 17, 65 = Java 21.
+      - name: Check bytecode level
+        if: success()
+        shell: pwsh
+        run: |
+          $out = (javap -verbose -cp target/classes by.edu.example.taskmanager.TaskManagerApplication | Select-String 'major version').Line.Trim()
+          Write-Host "TaskManagerApplication.class -> $out"
+          "| JDK ${{ matrix.java }} | $out |" >> $env:GITHUB_STEP_SUMMARY
+
+      - name: Generate Surefire HTML report
+        if: always()
+        shell: pwsh
+        run: |
+          if (Test-Path 'target/surefire-reports') {
+            mvn -B -ntp surefire-report:report-only
+            if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          } else {
+            Write-Host 'Surefire reports are absent.'
+          }
+
+      - name: Upload test reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-reports-jdk${{ matrix.java }}
+          path: |
+            target/surefire-reports/**
+            target/failsafe-reports/**
+            target/site/surefire-report.html
+            target/site/jacoco/**
+          if-no-files-found: warn
+          retention-days: 7
+
+      - name: Upload executable JAR
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: task-manager-jar-jdk${{ matrix.java }}
+          path: target/task-manager-cicd-1.0.0.jar
+          if-no-files-found: error
+          retention-days: 7
+
+  compatibility-summary:
+    name: Compatibility summary
+    needs: build
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Matrix result
+        shell: bash
+        run: |
+          {
+            echo "### Matrix-проверка JDK 17 / JDK 21"
+            echo ""
+            echo "| Параметр | Значение |"
+            echo "|---|---|"
+            echo "| Уровень байт-кода (java.version) | ${JAVA_RELEASE} |"
+            echo "| Итог матрицы | ${{ needs.build.result }} |"
+          } >> "$GITHUB_STEP_SUMMARY"
+          if [ "${{ needs.build.result }}" != "success" ]; then
+            echo "Проект несовместим хотя бы с одной версией JDK"
+            exit 1
+          fi
+          echo "Проект собирается и проходит тесты на JDK 17 и JDK 21"
