@@ -125,10 +125,19 @@ pipeline {
 
     post {
         always {
-            junit allowEmptyResults: true,
-                  testResults: 'target/surefire-reports/TEST-*.xml,target/failsafe-reports/TEST-*.xml'
-            archiveArtifacts artifacts: 'target/surefire-reports/**,target/failsafe-reports/**,target/site/jacoco/**',
-                             allowEmptyArchive: true
+            script {
+                // Отчёты публикуются только если код выбранной ветки действительно получен.
+                // Иначе (неверная ветка, недопустимое имя) в рабочей области могли остаться
+                // файлы target/ от предыдущей сборки — их нельзя выдавать за результат этой.
+                if (env.CHECKED_OUT_COMMIT) {
+                    junit allowEmptyResults: true,
+                          testResults: 'target/surefire-reports/TEST-*.xml,target/failsafe-reports/TEST-*.xml'
+                    archiveArtifacts artifacts: 'target/surefire-reports/**,target/failsafe-reports/**,target/site/jacoco/**',
+                                     allowEmptyArchive: true
+                } else {
+                    echo 'Код ветки не получен — отчёты тестов не публикуются'
+                }
+            }
         }
         success {
             script {
