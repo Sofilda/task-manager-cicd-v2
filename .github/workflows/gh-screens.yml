@@ -1,0 +1,38 @@
+# Скриншоты страниц GitHub Actions для отчёта (ЛР №4, вариант 2).
+name: Screenshots for report
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  screens:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Playwright
+        run: |
+          pip install playwright requests
+          python -m playwright install --with-deps chromium
+      - name: Take screenshots
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python ci/gh_screens.py
+      - name: Publish to branch gh-evidence
+        if: always()
+        env:
+          GIT_AUTHOR_NAME: ci-evidence-bot
+          GIT_AUTHOR_EMAIL: ci-evidence-bot
+          GIT_COMMITTER_NAME: ci-evidence-bot
+          GIT_COMMITTER_EMAIL: ci-evidence-bot
+        run: |
+          mkdir -p /tmp/ev && cp -r gh-evidence/. /tmp/ev/ || true
+          git checkout --orphan gh-evidence
+          git rm -rf --quiet . || true
+          cp -r /tmp/ev/. .
+          git add -A
+          git commit -m "GitHub Actions screenshots"
+          git push -f origin gh-evidence
