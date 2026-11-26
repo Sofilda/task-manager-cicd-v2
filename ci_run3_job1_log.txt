@@ -1,0 +1,255 @@
+ï»¿2026-11-26T15:03:35.4586943Z Current runner version: '2.338.2'
+2026-11-26T15:03:35.4615707Z ##[group]Runner Image Provisioner
+2026-11-26T15:03:35.4616667Z Hosted Compute Agent
+2026-11-26T15:03:35.4617304Z Version: 20261111.635
+2026-11-26T15:03:35.4618390Z Commit: b8a594ea514ff44cadb5342986c68b1eac6e22ed
+2026-11-26T15:03:35.4619398Z Build Date: 2026-11-11T01:49:01Z
+2026-11-26T15:03:35.4620135Z Worker ID: {aa65bc1e-3f96-43b8-9756-1a1ef2fc2c9a}
+2026-11-26T15:03:35.4620797Z Region: eastus3
+2026-11-26T15:03:35.4621296Z Cloud: Azure
+2026-11-26T15:03:35.4621809Z ##[endgroup]
+2026-11-26T15:03:35.4623311Z ##[group]Operating System
+2026-11-26T15:03:35.4623923Z Microsoft Windows Server 2025
+2026-11-26T15:03:35.4624536Z 10.0.26100
+2026-11-26T15:03:35.4625059Z Datacenter
+2026-11-26T15:03:35.4625598Z ##[endgroup]
+2026-11-26T15:03:35.4626103Z ##[group]Runner Image
+2026-11-26T15:03:35.4626646Z Image: windows-2025-vs2026
+2026-11-26T15:03:35.4627204Z Version: 20261116.315.1
+2026-11-26T15:03:35.4628797Z Included Software: https://github.com/actions/runner-images/blob/win25-vs2026/20261116.315/images/windows/Windows2025-VS2026-Readme.md
+2026-11-26T15:03:35.4630447Z Image Release: https://github.com/actions/runner-images/releases/tag/win25-vs2026%2F20261116.315
+2026-11-26T15:03:35.4631352Z ##[endgroup]
+2026-11-26T15:03:35.4632435Z ##[group]GITHUB_TOKEN Permissions
+2026-11-26T15:03:35.4634390Z Contents: read
+2026-11-26T15:03:35.4634904Z Metadata: read
+2026-11-26T15:03:35.4635398Z ##[endgroup]
+2026-11-26T15:03:35.4637485Z Secret source: Actions
+2026-11-26T15:03:35.4638681Z Cache mode: write
+2026-11-26T15:03:35.4639636Z Prepare workflow directory
+2026-11-26T15:03:35.5201482Z Prepare all required actions
+2026-11-26T15:03:35.5254729Z Getting action download info
+2026-11-26T15:03:35.7521516Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-11-26T15:03:35.8583571Z Download action repository 'actions/setup-java@v4' (SHA:cf277c60eb25467037889841efdb72551f06f6c3)
+2026-11-26T15:03:36.2662545Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2026-11-26T15:03:36.5780888Z Complete job name: Build and test (JDK 17)
+2026-11-26T15:03:36.7227397Z ##[group]Run actions/checkout@v4
+2026-11-26T15:03:36.7229368Z with:
+2026-11-26T15:03:36.7230267Z   repository: Sofilda/task-manager-cicd-v2
+2026-11-26T15:03:36.7237277Z   token: ***
+2026-11-26T15:03:36.7238121Z   ssh-strict: true
+2026-11-26T15:03:36.7238977Z   ssh-user: git
+2026-11-26T15:03:36.7239817Z   persist-credentials: true
+2026-11-26T15:03:36.7240745Z   clean: true
+2026-11-26T15:03:36.7241607Z   sparse-checkout-cone-mode: true
+2026-11-26T15:03:36.7242540Z   fetch-depth: 1
+2026-11-26T15:03:36.7243354Z   fetch-tags: false
+2026-11-26T15:03:36.7244178Z   show-progress: true
+2026-11-26T15:03:36.7245014Z   lfs: false
+2026-11-26T15:03:36.7245834Z   submodules: false
+2026-11-26T15:03:36.7246727Z   set-safe-directory: true
+2026-11-26T15:03:36.7247643Z   allow-unsafe-pr-checkout: false
+2026-11-26T15:03:36.7248962Z env:
+2026-11-26T15:03:36.7249827Z   JAVA_RELEASE: 21
+2026-11-26T15:03:36.7250726Z ##[endgroup]
+2026-11-26T15:03:36.8962887Z Syncing repository: Sofilda/task-manager-cicd-v2
+2026-11-26T15:03:36.8965435Z ##[group]Getting Git version info
+2026-11-26T15:03:36.8966657Z Working directory is 'D:\a\task-manager-cicd-v2\task-manager-cicd-v2'
+2026-11-26T15:03:36.9949530Z [command]"C:\Program Files\Git\bin\git.exe" version
+2026-11-26T15:03:37.2879533Z git version 2.56.1.windows.1
+2026-11-26T15:03:37.2936434Z ##[endgroup]
+2026-11-26T15:03:37.2956968Z Temporarily overriding HOME='D:\a\_temp\6afca1e4-1151-4e81-89dd-9e3cf9d7dfd0' before making global git config changes
+2026-11-26T15:03:37.2959797Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-26T15:03:37.2970275Z [command]"C:\Program Files\Git\bin\git.exe" config --global --add safe.directory D:\a\task-manager-cicd-v2\task-manager-cicd-v2
+2026-11-26T15:03:37.3635535Z Deleting the contents of 'D:\a\task-manager-cicd-v2\task-manager-cicd-v2'
+2026-11-26T15:03:37.3642350Z ##[group]Initializing the repository
+2026-11-26T15:03:37.3652331Z [command]"C:\Program Files\Git\bin\git.exe" init D:\a\task-manager-cicd-v2\task-manager-cicd-v2
+2026-11-26T15:03:37.4463902Z Initialized empty Git repository in D:/a/task-manager-cicd-v2/task-manager-cicd-v2/.git/
+2026-11-26T15:03:37.4523594Z [command]"C:\Program Files\Git\bin\git.exe" remote add origin https://github.com/Sofilda/task-manager-cicd-v2
+2026-11-26T15:03:37.5164069Z ##[endgroup]
+2026-11-26T15:03:37.5165596Z ##[group]Disabling automatic garbage collection
+2026-11-26T15:03:37.5179038Z [command]"C:\Program Files\Git\bin\git.exe" config --local gc.auto 0
+2026-11-26T15:03:37.5584725Z ##[endgroup]
+2026-11-26T15:03:37.5586224Z ##[group]Setting up auth
+2026-11-26T15:03:37.5597963Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp core\.sshCommand
+2026-11-26T15:03:37.6048859Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\""
+2026-11-26T15:03:38.9225843Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-26T15:03:38.9649300Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\""
+2026-11-26T15:03:39.5496974Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-26T15:03:39.5901334Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "git config --local --show-origin --name-only --get-regexp remote.origin.url"
+2026-11-26T15:03:40.1678810Z [command]"C:\Program Files\Git\bin\git.exe" config --local http.https://github.com/.extraheader "AUTHORIZATION: basic ***"
+2026-11-26T15:03:40.2111363Z ##[endgroup]
+2026-11-26T15:03:40.2111980Z ##[group]Fetching the repository
+2026-11-26T15:03:40.2126022Z [command]"C:\Program Files\Git\bin\git.exe" -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +769ff1537eedaea34144cfd9266dc0b28af5c71b:refs/remotes/origin/main
+2026-11-26T15:03:42.1407487Z From https://github.com/Sofilda/task-manager-cicd-v2
+2026-11-26T15:03:42.1408389Z  * [new ref]         769ff1537eedaea34144cfd9266dc0b28af5c71b -> origin/main
+2026-11-26T15:03:42.1465013Z ##[endgroup]
+2026-11-26T15:03:42.1466383Z ##[group]Determining the checkout info
+2026-11-26T15:03:42.1468092Z ##[endgroup]
+2026-11-26T15:03:42.1478714Z [command]"C:\Program Files\Git\bin\git.exe" sparse-checkout disable
+2026-11-26T15:03:42.2018373Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset-all extensions.worktreeConfig
+2026-11-26T15:03:42.2455253Z ##[group]Checking out the ref
+2026-11-26T15:03:42.2466109Z [command]"C:\Program Files\Git\bin\git.exe" checkout --progress --force -B main refs/remotes/origin/main
+2026-11-26T15:03:42.3204348Z Switched to a new branch 'main'
+2026-11-26T15:03:42.3222860Z branch 'main' set up to track 'origin/main'.
+2026-11-26T15:03:42.3277232Z ##[endgroup]
+2026-11-26T15:03:42.3749924Z [command]"C:\Program Files\Git\bin\git.exe" log -1 --format=%H
+2026-11-26T15:03:42.4108243Z 769ff1537eedaea34144cfd9266dc0b28af5c71b
+2026-11-26T15:03:42.4623341Z ##[group]Run actions/setup-java@v4
+2026-11-26T15:03:42.4623803Z with:
+2026-11-26T15:03:42.4624104Z   distribution: temurin
+2026-11-26T15:03:42.4624488Z   java-version: 17
+2026-11-26T15:03:42.4624792Z   cache: maven
+2026-11-26T15:03:42.4625117Z   java-package: jdk
+2026-11-26T15:03:42.4625521Z   check-latest: false
+2026-11-26T15:03:42.4625827Z   server-id: github
+2026-11-26T15:03:42.4626190Z   server-username: GITHUB_ACTOR
+2026-11-26T15:03:42.4626538Z   server-password: GITHUB_TOKEN
+2026-11-26T15:03:42.4626871Z   overwrite-settings: true
+2026-11-26T15:03:42.4627873Z   job-status: success
+2026-11-26T15:03:42.4630489Z   token: ***
+2026-11-26T15:03:42.4630795Z env:
+2026-11-26T15:03:42.4631065Z   JAVA_RELEASE: 21
+2026-11-26T15:03:42.4631343Z ##[endgroup]
+2026-11-26T15:03:42.6631637Z ##[warning]setup-java v4 is deprecated and will no longer receive updates. Please migrate to actions/setup-java@v5.
+2026-11-26T15:03:42.6638944Z ##[group]Installed distributions
+2026-11-26T15:03:42.7423859Z Resolved Java 17.0.21+9 from tool-cache
+2026-11-26T15:03:42.7424369Z Setting Java 17.0.21+9 as the default
+2026-11-26T15:03:42.7443876Z (node:7424) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-11-26T15:03:42.7444580Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-11-26T15:03:42.7448819Z Creating toolchains.xml for JDK version 17 from temurin
+2026-11-26T15:03:42.7554711Z Writing to C:\Users\runneradmin\.m2\toolchains.xml
+2026-11-26T15:03:42.7562988Z 
+2026-11-26T15:03:42.7563907Z Java configuration:
+2026-11-26T15:03:42.7564463Z   Distribution: temurin
+2026-11-26T15:03:42.7564905Z   Version: 17.0.21+9
+2026-11-26T15:03:42.7565538Z   Path: C:\hostedtoolcache\windows\Java_Temurin-Hotspot_jdk\17.0.21-9\x64
+2026-11-26T15:03:42.7566055Z 
+2026-11-26T15:03:42.7566766Z ##[endgroup]
+2026-11-26T15:03:42.7594660Z Creating settings.xml with server-id: github
+2026-11-26T15:03:42.7595356Z Writing to C:\Users\runneradmin\.m2\settings.xml
+2026-11-26T15:03:43.0398979Z Cache hit for: setup-java-Windows-x64-maven-8e2c2da7fd7da3ee2c2d298bd98146df85aaaee53e9780d39c7a616deaff15a6
+2026-11-26T15:03:43.0515416Z (node:7424) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-11-26T15:03:43.7129239Z Received 64932648 of 64932648 (100.0%), 103.6 MBs/sec
+2026-11-26T15:03:43.7130763Z Cache Size: ~62 MB (64932648 B)
+2026-11-26T15:03:43.7236808Z [command]"C:\Program Files\Git\usr\bin\tar.exe" -xf D:/a/_temp/a3f9db75-a60e-4869-9b0d-740641f33b60/cache.tzst -P -C D:/a/task-manager-cicd-v2/task-manager-cicd-v2 --force-local --use-compress-program "zstd -d"
+2026-11-26T15:03:47.1954740Z Cache restored successfully
+2026-11-26T15:03:47.2043838Z Cache restored from key: setup-java-Windows-x64-maven-8e2c2da7fd7da3ee2c2d298bd98146df85aaaee53e9780d39c7a616deaff15a6
+2026-11-26T15:03:47.2537622Z ##[group]Run java -version
+2026-11-26T15:03:47.2538465Z [36;1mjava -version[0m
+2026-11-26T15:03:47.2538898Z [36;1mmvn -version[0m
+2026-11-26T15:03:47.2539521Z [36;1mWrite-Host "Target bytecode level (java.version): $env:JAVA_RELEASE"[0m
+2026-11-26T15:03:47.3664817Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2026-11-26T15:03:47.3665413Z env:
+2026-11-26T15:03:47.3665821Z   JAVA_RELEASE: 21
+2026-11-26T15:03:47.3666304Z   JAVA_HOME: C:\hostedtoolcache\windows\Java_Temurin-Hotspot_jdk\17.0.21-9\x64
+2026-11-26T15:03:47.3667200Z   JAVA_HOME_17_X64: C:\hostedtoolcache\windows\Java_Temurin-Hotspot_jdk\17.0.21-9\x64
+2026-11-26T15:03:47.3667705Z ##[endgroup]
+2026-11-26T15:03:50.4449177Z openjdk version "17.0.21" 2026-10-20
+2026-11-26T15:03:50.4449724Z OpenJDK Runtime Environment Temurin-17.0.21+9 (build 17.0.21+9)
+2026-11-26T15:03:50.4450551Z OpenJDK 64-Bit Server VM Temurin-17.0.21+9 (build 17.0.21+9, mixed mode, sharing)
+2026-11-26T15:03:51.9249728Z Apache Maven 3.9.16 (2bdd9fddda4b155ebf8000e807eb73fd829a51d5)
+2026-11-26T15:03:51.9251291Z Maven home: C:\ProgramData\chocolatey\lib\maven\apache-maven-3.9.16
+2026-11-26T15:03:51.9252025Z Java version: 17.0.21, vendor: Eclipse Adoptium, runtime: C:\hostedtoolcache\windows\Java_Temurin-Hotspot_jdk\17.0.21-9\x64
+2026-11-26T15:03:51.9252741Z Default locale: en_US, platform encoding: Cp1252
+2026-11-26T15:03:51.9253218Z OS name: "windows server 2025", version: "10.0", arch: "amd64", family: "windows"
+2026-11-26T15:03:52.0346881Z Target bytecode level (java.version): 21
+2026-11-26T15:03:52.1195037Z ##[group]Run mvn -B -ntp clean verify "-Djava.version=21"
+2026-11-26T15:03:52.1195661Z [36;1mmvn -B -ntp clean verify "-Djava.version=21"[0m
+2026-11-26T15:03:52.1263985Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2026-11-26T15:03:52.1264549Z env:
+2026-11-26T15:03:52.1265032Z   JAVA_RELEASE: 21
+2026-11-26T15:03:52.1265473Z   JAVA_HOME: C:\hostedtoolcache\windows\Java_Temurin-Hotspot_jdk\17.0.21-9\x64
+2026-11-26T15:03:52.1266092Z   JAVA_HOME_17_X64: C:\hostedtoolcache\windows\Java_Temurin-Hotspot_jdk\17.0.21-9\x64
+2026-11-26T15:03:52.1266532Z ##[endgroup]
+2026-11-26T15:03:55.1604205Z [INFO] Scanning for projects...
+2026-11-26T15:03:55.5397087Z [INFO] 
+2026-11-26T15:03:55.5398193Z [INFO] ------------------< by.edu.example:task-manager-cicd >------------------
+2026-11-26T15:03:55.5399232Z [INFO] Building task-manager-cicd 1.0.0
+2026-11-26T15:03:55.5425869Z [INFO]   from pom.xml
+2026-11-26T15:03:55.5438659Z [INFO] --------------------------------[ jar ]---------------------------------
+2026-11-26T15:03:56.1080663Z [INFO] 
+2026-11-26T15:03:56.1089963Z [INFO] --- clean:3.4.1:clean (default-clean) @ task-manager-cicd ---
+2026-11-26T15:03:56.2447835Z [INFO] 
+2026-11-26T15:03:56.2448663Z [INFO] --- jacoco:0.8.15:prepare-agent (prepare-agent) @ task-manager-cicd ---
+2026-11-26T15:03:56.3667661Z [INFO] argLine set to -javaagent:C:\\Users\\runneradmin\\.m2\\repository\\org\\jacoco\\org.jacoco.agent\\0.8.15\\org.jacoco.agent-0.8.15-runtime.jar=destfile=D:\\a\\task-manager-cicd-v2\\task-manager-cicd-v2\\target\\jacoco.exec,excludes=by/edu/example/taskmanager/TaskManagerApplication.class
+2026-11-26T15:03:56.3674021Z [INFO] 
+2026-11-26T15:03:56.3674620Z [INFO] --- resources:3.3.1:resources (default-resources) @ task-manager-cicd ---
+2026-11-26T15:03:56.4960762Z [INFO] Copying 1 resource from src\main\resources to target\classes
+2026-11-26T15:03:56.5151635Z [INFO] Copying 0 resource from src\main\resources to target\classes
+2026-11-26T15:03:56.5160473Z [INFO] 
+2026-11-26T15:03:56.5161143Z [INFO] --- compiler:3.14.1:compile (default-compile) @ task-manager-cicd ---
+2026-11-26T15:03:56.7400474Z [INFO] Recompiling the module because of changed source code.
+2026-11-26T15:03:56.7754014Z [INFO] Compiling 13 source files with javac [debug parameters release 21] to target\classes
+2026-11-26T15:03:57.1168689Z [INFO] ------------------------------------------------------------------------
+2026-11-26T15:03:57.1169969Z [INFO] BUILD FAILURE
+2026-11-26T15:03:57.1170677Z [INFO] ------------------------------------------------------------------------
+2026-11-26T15:03:57.1187705Z [INFO] Total time:  2.014 s
+2026-11-26T15:03:57.1189576Z [INFO] Finished at: 2026-11-26T15:03:57Z
+2026-11-26T15:03:57.1190297Z [INFO] ------------------------------------------------------------------------
+2026-11-26T15:03:57.1200229Z [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.14.1:compile (default-compile) on project task-manager-cicd: Fatal error compiling: error: release version 21 not supported -> [Help 1]
+2026-11-26T15:03:57.1201787Z [ERROR] 
+2026-11-26T15:03:57.1204613Z [ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+2026-11-26T15:03:57.1205774Z [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+2026-11-26T15:03:57.1206530Z [ERROR] 
+2026-11-26T15:03:57.1208351Z [ERROR] For more information about the errors and possible solutions, please read the following articles:
+2026-11-26T15:03:57.1209279Z [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
+2026-11-26T15:03:57.2675949Z ##[error]Process completed with exit code 1.
+2026-11-26T15:03:57.2841323Z ##[group]Run if (Test-Path 'target/surefire-reports') {
+2026-11-26T15:03:57.2841911Z [36;1mif (Test-Path 'target/surefire-reports') {[0m
+2026-11-26T15:03:57.2842412Z [36;1m  mvn -B -ntp surefire-report:report-only[0m
+2026-11-26T15:03:57.2842830Z [36;1m  if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }[0m
+2026-11-26T15:03:57.2843421Z [36;1m} else {[0m
+2026-11-26T15:03:57.2843798Z [36;1m  Write-Host 'Surefire reports are absent.'[0m
+2026-11-26T15:03:57.2844175Z [36;1m}[0m
+2026-11-26T15:03:57.2911105Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2026-11-26T15:03:57.2911552Z env:
+2026-11-26T15:03:57.2911834Z   JAVA_RELEASE: 21
+2026-11-26T15:03:57.2912283Z   JAVA_HOME: C:\hostedtoolcache\windows\Java_Temurin-Hotspot_jdk\17.0.21-9\x64
+2026-11-26T15:03:57.2912964Z   JAVA_HOME_17_X64: C:\hostedtoolcache\windows\Java_Temurin-Hotspot_jdk\17.0.21-9\x64
+2026-11-26T15:03:57.2913540Z ##[endgroup]
+2026-11-26T15:03:57.6348246Z Surefire reports are absent.
+2026-11-26T15:03:57.6985031Z ##[group]Run actions/upload-artifact@v4
+2026-11-26T15:03:57.6985544Z with:
+2026-11-26T15:03:57.6985903Z   name: test-reports-jdk17
+2026-11-26T15:03:57.6986574Z   path: target/surefire-reports/**
+target/failsafe-reports/**
+target/site/surefire-report.html
+target/site/jacoco/**
+
+2026-11-26T15:03:57.6987204Z   if-no-files-found: warn
+2026-11-26T15:03:57.6987528Z   retention-days: 7
+2026-11-26T15:03:57.6987816Z   compression-level: 6
+2026-11-26T15:03:57.6988509Z   overwrite: false
+2026-11-26T15:03:57.6988832Z   include-hidden-files: false
+2026-11-26T15:03:57.6989368Z env:
+2026-11-26T15:03:57.6989666Z   JAVA_RELEASE: 21
+2026-11-26T15:03:57.6990148Z   JAVA_HOME: C:\hostedtoolcache\windows\Java_Temurin-Hotspot_jdk\17.0.21-9\x64
+2026-11-26T15:03:57.6990823Z   JAVA_HOME_17_X64: C:\hostedtoolcache\windows\Java_Temurin-Hotspot_jdk\17.0.21-9\x64
+2026-11-26T15:03:57.6991519Z ##[endgroup]
+2026-11-26T15:03:57.8948903Z (node:7208) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-11-26T15:03:57.8950101Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-11-26T15:03:57.9000781Z Multiple search paths detected. Calculating the least common ancestor of all paths
+2026-11-26T15:03:57.9003929Z The least common ancestor is D:\a\task-manager-cicd-v2\task-manager-cicd-v2\target. This will be the root directory of the artifact
+2026-11-26T15:03:57.9006867Z ##[warning]No files were found with the provided path: target/surefire-reports/**
+target/failsafe-reports/**
+target/site/surefire-report.html
+target/site/jacoco/**. No artifacts will be uploaded.
+2026-11-26T15:03:57.9376543Z Post job cleanup.
+2026-11-26T15:03:58.1058085Z (node:8956) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-11-26T15:03:58.1058913Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-11-26T15:03:58.1454719Z Post job cleanup.
+2026-11-26T15:03:58.3324693Z [command]"C:\Program Files\Git\bin\git.exe" version
+2026-11-26T15:03:58.3700071Z git version 2.56.1.windows.1
+2026-11-26T15:03:58.3773159Z Temporarily overriding HOME='D:\a\_temp\52a670fd-d3e6-45d4-a48c-141fe839f71d' before making global git config changes
+2026-11-26T15:03:58.3774208Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-26T15:03:58.3785872Z [command]"C:\Program Files\Git\bin\git.exe" config --global --add safe.directory D:\a\task-manager-cicd-v2\task-manager-cicd-v2
+2026-11-26T15:03:58.4199156Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp core\.sshCommand
+2026-11-26T15:03:58.4601955Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\""
+2026-11-26T15:03:59.0655919Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-26T15:03:59.1005214Z http.https://github.com/.extraheader
+2026-11-26T15:03:59.1058997Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset-all http.https://github.com/.extraheader
+2026-11-26T15:03:59.1458701Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\""
+2026-11-26T15:03:59.6998722Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-26T15:03:59.7393431Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "git config --local --show-origin --name-only --get-regexp remote.origin.url"
+2026-11-26T15:04:00.3304365Z Cleaning up orphan processes
+2026-11-26T15:04:00.3404083Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-java@v4, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

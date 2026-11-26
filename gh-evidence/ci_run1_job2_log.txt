@@ -1,0 +1,50 @@
+ï»¿2026-11-26T15:03:01.3759266Z Current runner version: '2.338.2'
+2026-11-26T15:03:01.3784363Z ##[group]Runner Image Provisioner
+2026-11-26T15:03:01.3785304Z Hosted Compute Agent
+2026-11-26T15:03:01.3785995Z Version: 20261111.635
+2026-11-26T15:03:01.3786728Z Commit: b8a594ea514ff44cadb5342986c68b1eac6e22ed
+2026-11-26T15:03:01.3787506Z Build Date: 2026-11-11T01:49:01Z
+2026-11-26T15:03:01.3788231Z Worker ID: {d030b2bf-5a26-4d02-b0ab-9b3ca67ba3cf}
+2026-11-26T15:03:01.3789062Z Region: eastus
+2026-11-26T15:03:01.3789686Z Cloud: Azure
+2026-11-26T15:03:01.3790282Z ##[endgroup]
+2026-11-26T15:03:01.3792191Z ##[group]Operating System
+2026-11-26T15:03:01.3792858Z Ubuntu
+2026-11-26T15:03:01.3793506Z 26.04.1
+2026-11-26T15:03:01.3794075Z LTS
+2026-11-26T15:03:01.3794638Z ##[endgroup]
+2026-11-26T15:03:01.3795275Z ##[group]Runner Image
+2026-11-26T15:03:01.3795885Z Image: ubuntu-26.04
+2026-11-26T15:03:01.3796553Z Version: 20261116.202.1
+2026-11-26T15:03:01.3797867Z Included Software: https://github.com/actions/runner-images/blob/ubuntu26/20261116.202/images/ubuntu/Ubuntu2604-Readme.md
+2026-11-26T15:03:01.3799555Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu26%2F20261116.202
+2026-11-26T15:03:01.3800831Z ##[endgroup]
+2026-11-26T15:03:01.3802166Z ##[group]GITHUB_TOKEN Permissions
+2026-11-26T15:03:01.3804413Z Contents: read
+2026-11-26T15:03:01.3805144Z Metadata: read
+2026-11-26T15:03:01.3805734Z ##[endgroup]
+2026-11-26T15:03:01.3808218Z Secret source: Actions
+2026-11-26T15:03:01.3809306Z Cache mode: write
+2026-11-26T15:03:01.3810376Z Prepare workflow directory
+2026-11-26T15:03:01.4335479Z Prepare all required actions
+2026-11-26T15:03:01.4398931Z Complete job name: Compatibility summary
+2026-11-26T15:03:01.5432217Z ##[group]Run {
+2026-11-26T15:03:01.5432938Z [36;1m{[0m
+2026-11-26T15:03:01.5433798Z [36;1m  echo "### Matrix-Ð¿ÑÐ¾Ð²ÐµÑÐºÐ° JDK 17 / JDK 21"[0m
+2026-11-26T15:03:01.5434678Z [36;1m  echo ""[0m
+2026-11-26T15:03:01.5435368Z [36;1m  echo "| ÐÐ°ÑÐ°Ð¼ÐµÑÑ | ÐÐ½Ð°ÑÐµÐ½Ð¸Ðµ |"[0m
+2026-11-26T15:03:01.5436077Z [36;1m  echo "|---|---|"[0m
+2026-11-26T15:03:01.5436903Z [36;1m  echo "| Ð£ÑÐ¾Ð²ÐµÐ½Ñ Ð±Ð°Ð¹Ñ-ÐºÐ¾Ð´Ð° (java.version) | ${JAVA_RELEASE} |"[0m
+2026-11-26T15:03:01.5437823Z [36;1m  echo "| ÐÑÐ¾Ð³ Ð¼Ð°ÑÑÐ¸ÑÑ | success |"[0m
+2026-11-26T15:03:01.5438557Z [36;1m} >> "$GITHUB_STEP_SUMMARY"[0m
+2026-11-26T15:03:01.5439333Z [36;1mif [ "success" != "success" ]; then[0m
+2026-11-26T15:03:01.5440145Z [36;1m  echo "ÐÑÐ¾ÐµÐºÑ Ð½ÐµÑÐ¾Ð²Ð¼ÐµÑÑÐ¸Ð¼ ÑÐ¾ÑÑ Ð±Ñ Ñ Ð¾Ð´Ð½Ð¾Ð¹ Ð²ÐµÑÑÐ¸ÐµÐ¹ JDK"[0m
+2026-11-26T15:03:01.5441094Z [36;1m  exit 1[0m
+2026-11-26T15:03:01.5441720Z [36;1mfi[0m
+2026-11-26T15:03:01.5442388Z [36;1mecho "ÐÑÐ¾ÐµÐºÑ ÑÐ¾Ð±Ð¸ÑÐ°ÐµÑÑÑ Ð¸ Ð¿ÑÐ¾ÑÐ¾Ð´Ð¸Ñ ÑÐµÑÑÑ Ð½Ð° JDK 17 Ð¸ JDK 21"[0m
+2026-11-26T15:03:01.6023622Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-11-26T15:03:01.6024862Z env:
+2026-11-26T15:03:01.6025559Z   JAVA_RELEASE: 17
+2026-11-26T15:03:01.6026154Z ##[endgroup]
+2026-11-26T15:03:01.6308866Z ÐÑÐ¾ÐµÐºÑ ÑÐ¾Ð±Ð¸ÑÐ°ÐµÑÑÑ Ð¸ Ð¿ÑÐ¾ÑÐ¾Ð´Ð¸Ñ ÑÐµÑÑÑ Ð½Ð° JDK 17 Ð¸ JDK 21
+2026-11-26T15:03:01.6563197Z Cleaning up orphan processes

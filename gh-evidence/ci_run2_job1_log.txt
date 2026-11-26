@@ -1,0 +1,389 @@
+ï»¿2026-11-26T15:01:56.8434668Z Current runner version: '2.338.2'
+2026-11-26T15:01:56.8471427Z ##[group]Runner Image Provisioner
+2026-11-26T15:01:56.8472740Z Hosted Compute Agent
+2026-11-26T15:01:56.8473744Z Version: 20261111.635
+2026-11-26T15:01:56.8474736Z Commit: b8a594ea514ff44cadb5342986c68b1eac6e22ed
+2026-11-26T15:01:56.8475957Z Build Date: 2026-11-11T01:49:01Z
+2026-11-26T15:01:56.8477044Z Worker ID: {9325499b-84b5-4f5b-995c-cce2cc21db11}
+2026-11-26T15:01:56.8478194Z Region: northcentralus
+2026-11-26T15:01:56.8479237Z Cloud: Azure
+2026-11-26T15:01:56.8480134Z ##[endgroup]
+2026-11-26T15:01:56.8482808Z ##[group]Operating System
+2026-11-26T15:01:56.8483847Z Microsoft Windows Server 2025
+2026-11-26T15:01:56.8484790Z 10.0.26100
+2026-11-26T15:01:56.8485591Z Datacenter
+2026-11-26T15:01:56.8486370Z ##[endgroup]
+2026-11-26T15:01:56.8487185Z ##[group]Runner Image
+2026-11-26T15:01:56.8488100Z Image: windows-2025-vs2026
+2026-11-26T15:01:56.8489036Z Version: 20261116.315.1
+2026-11-26T15:01:56.8491474Z Included Software: https://github.com/actions/runner-images/blob/win25-vs2026/20261116.315/images/windows/Windows2025-VS2026-Readme.md
+2026-11-26T15:01:56.8494470Z Image Release: https://github.com/actions/runner-images/releases/tag/win25-vs2026%2F20261116.315
+2026-11-26T15:01:56.8496286Z ##[endgroup]
+2026-11-26T15:01:56.8498112Z ##[group]GITHUB_TOKEN Permissions
+2026-11-26T15:01:56.8500660Z Contents: read
+2026-11-26T15:01:56.8501542Z Metadata: read
+2026-11-26T15:01:56.8502701Z ##[endgroup]
+2026-11-26T15:01:56.8505531Z Secret source: Actions
+2026-11-26T15:01:56.8506913Z Cache mode: write
+2026-11-26T15:01:56.8508094Z Prepare workflow directory
+2026-11-26T15:01:56.9156349Z Prepare all required actions
+2026-11-26T15:01:56.9206975Z Getting action download info
+2026-11-26T15:01:57.1455868Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-11-26T15:01:57.2887758Z Download action repository 'actions/setup-java@v4' (SHA:cf277c60eb25467037889841efdb72551f06f6c3)
+2026-11-26T15:01:57.7363333Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2026-11-26T15:01:58.1080832Z Complete job name: Build and test (JDK 21)
+2026-11-26T15:01:58.2900947Z ##[group]Run actions/checkout@v4
+2026-11-26T15:01:58.2903391Z with:
+2026-11-26T15:01:58.2904661Z   repository: Sofilda/task-manager-cicd-v2
+2026-11-26T15:01:58.2919716Z   token: ***
+2026-11-26T15:01:58.2921171Z   ssh-strict: true
+2026-11-26T15:01:58.2922382Z   ssh-user: git
+2026-11-26T15:01:58.2923642Z   persist-credentials: true
+2026-11-26T15:01:58.2925046Z   clean: true
+2026-11-26T15:01:58.2926354Z   sparse-checkout-cone-mode: true
+2026-11-26T15:01:58.2927841Z   fetch-depth: 1
+2026-11-26T15:01:58.2929056Z   fetch-tags: false
+2026-11-26T15:01:58.2930345Z   show-progress: true
+2026-11-26T15:01:58.2931738Z   lfs: false
+2026-11-26T15:01:58.2932997Z   submodules: false
+2026-11-26T15:01:58.2934292Z   set-safe-directory: true
+2026-11-26T15:01:58.2935738Z   allow-unsafe-pr-checkout: false
+2026-11-26T15:01:58.2937716Z env:
+2026-11-26T15:01:58.2938843Z   JAVA_RELEASE: 17
+2026-11-26T15:01:58.2940450Z ##[endgroup]
+2026-11-26T15:01:58.4487300Z Syncing repository: Sofilda/task-manager-cicd-v2
+2026-11-26T15:01:58.4490704Z ##[group]Getting Git version info
+2026-11-26T15:01:58.4492256Z Working directory is 'D:\a\task-manager-cicd-v2\task-manager-cicd-v2'
+2026-11-26T15:01:58.5444455Z [command]"C:\Program Files\Git\bin\git.exe" version
+2026-11-26T15:01:58.9195738Z git version 2.56.1.windows.1
+2026-11-26T15:01:58.9258678Z ##[endgroup]
+2026-11-26T15:01:58.9278663Z Temporarily overriding HOME='D:\a\_temp\aa2ad23a-0b81-4a50-ae4f-43613fb93a4d' before making global git config changes
+2026-11-26T15:01:58.9280697Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-26T15:01:58.9291869Z [command]"C:\Program Files\Git\bin\git.exe" config --global --add safe.directory D:\a\task-manager-cicd-v2\task-manager-cicd-v2
+2026-11-26T15:01:58.9999833Z Deleting the contents of 'D:\a\task-manager-cicd-v2\task-manager-cicd-v2'
+2026-11-26T15:01:59.0006641Z ##[group]Initializing the repository
+2026-11-26T15:01:59.0015250Z [command]"C:\Program Files\Git\bin\git.exe" init D:\a\task-manager-cicd-v2\task-manager-cicd-v2
+2026-11-26T15:01:59.1014886Z Initialized empty Git repository in D:/a/task-manager-cicd-v2/task-manager-cicd-v2/.git/
+2026-11-26T15:01:59.1065060Z [command]"C:\Program Files\Git\bin\git.exe" remote add origin https://github.com/Sofilda/task-manager-cicd-v2
+2026-11-26T15:01:59.1775081Z ##[endgroup]
+2026-11-26T15:01:59.1784301Z ##[group]Disabling automatic garbage collection
+2026-11-26T15:01:59.1786977Z [command]"C:\Program Files\Git\bin\git.exe" config --local gc.auto 0
+2026-11-26T15:01:59.2157346Z ##[endgroup]
+2026-11-26T15:01:59.2158843Z ##[group]Setting up auth
+2026-11-26T15:01:59.2168568Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp core\.sshCommand
+2026-11-26T15:01:59.2542895Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\""
+2026-11-26T15:02:00.8105620Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-26T15:02:00.8488897Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\""
+2026-11-26T15:02:01.3874249Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-26T15:02:01.4349029Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "git config --local --show-origin --name-only --get-regexp remote.origin.url"
+2026-11-26T15:02:02.0027464Z [command]"C:\Program Files\Git\bin\git.exe" config --local http.https://github.com/.extraheader "AUTHORIZATION: basic ***"
+2026-11-26T15:02:02.0468784Z ##[endgroup]
+2026-11-26T15:02:02.0469703Z ##[group]Fetching the repository
+2026-11-26T15:02:02.0490609Z [command]"C:\Program Files\Git\bin\git.exe" -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +d234eb78069b982d25acbead90ee2d8fb21ad112:refs/remotes/origin/feature/extra-test
+2026-11-26T15:02:03.2059456Z From https://github.com/Sofilda/task-manager-cicd-v2
+2026-11-26T15:02:03.2060818Z  * [new ref]         d234eb78069b982d25acbead90ee2d8fb21ad112 -> origin/feature/extra-test
+2026-11-26T15:02:03.2115009Z ##[endgroup]
+2026-11-26T15:02:03.2215756Z ##[group]Determining the checkout info
+2026-11-26T15:02:03.2219566Z ##[endgroup]
+2026-11-26T15:02:03.2220572Z [command]"C:\Program Files\Git\bin\git.exe" sparse-checkout disable
+2026-11-26T15:02:03.2720574Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset-all extensions.worktreeConfig
+2026-11-26T15:02:03.3115474Z ##[group]Checking out the ref
+2026-11-26T15:02:03.3124786Z [command]"C:\Program Files\Git\bin\git.exe" checkout --progress --force -B feature/extra-test refs/remotes/origin/feature/extra-test
+2026-11-26T15:02:03.3979947Z Switched to a new branch 'feature/extra-test'
+2026-11-26T15:02:03.4006297Z branch 'feature/extra-test' set up to track 'origin/feature/extra-test'.
+2026-11-26T15:02:03.4055892Z ##[endgroup]
+2026-11-26T15:02:03.4547260Z [command]"C:\Program Files\Git\bin\git.exe" log -1 --format=%H
+2026-11-26T15:02:03.5054428Z d234eb78069b982d25acbead90ee2d8fb21ad112
+2026-11-26T15:02:03.5555528Z ##[group]Run actions/setup-java@v4
+2026-11-26T15:02:03.5555868Z with:
+2026-11-26T15:02:03.5556071Z   distribution: temurin
+2026-11-26T15:02:03.5556291Z   java-version: 21
+2026-11-26T15:02:03.5556474Z   cache: maven
+2026-11-26T15:02:03.5556662Z   java-package: jdk
+2026-11-26T15:02:03.5556857Z   check-latest: false
+2026-11-26T15:02:03.5557070Z   server-id: github
+2026-11-26T15:02:03.5557292Z   server-username: GITHUB_ACTOR
+2026-11-26T15:02:03.5558315Z   server-password: GITHUB_TOKEN
+2026-11-26T15:02:03.5558549Z   overwrite-settings: true
+2026-11-26T15:02:03.5558760Z   job-status: success
+2026-11-26T15:02:03.5561601Z   token: ***
+2026-11-26T15:02:03.5561779Z env:
+2026-11-26T15:02:03.5561939Z   JAVA_RELEASE: 17
+2026-11-26T15:02:03.5562115Z ##[endgroup]
+2026-11-26T15:02:03.7574078Z ##[warning]setup-java v4 is deprecated and will no longer receive updates. Please migrate to actions/setup-java@v5.
+2026-11-26T15:02:03.7581464Z ##[group]Installed distributions
+2026-11-26T15:02:03.7902035Z Resolved Java 21.0.13+9.0 from tool-cache
+2026-11-26T15:02:03.7902560Z Setting Java 21.0.13+9.0 as the default
+2026-11-26T15:02:03.7926155Z (node:2460) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-11-26T15:02:03.7927323Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-11-26T15:02:03.7931400Z Creating toolchains.xml for JDK version 21 from temurin
+2026-11-26T15:02:03.8070094Z Writing to C:\Users\runneradmin\.m2\toolchains.xml
+2026-11-26T15:02:03.8074910Z 
+2026-11-26T15:02:03.8075546Z Java configuration:
+2026-11-26T15:02:03.8075910Z   Distribution: temurin
+2026-11-26T15:02:03.8076256Z   Version: 21.0.13+9.0
+2026-11-26T15:02:03.8076846Z   Path: C:\hostedtoolcache\windows\Java_Temurin-Hotspot_jdk\21.0.13-9.0\x64
+2026-11-26T15:02:03.8077416Z 
+2026-11-26T15:02:03.8078259Z ##[endgroup]
+2026-11-26T15:02:03.8099010Z Creating settings.xml with server-id: github
+2026-11-26T15:02:03.8101127Z Writing to C:\Users\runneradmin\.m2\settings.xml
+2026-11-26T15:02:04.1694481Z maven cache is not found
+2026-11-26T15:02:04.2033711Z ##[group]Run java -version
+2026-11-26T15:02:04.2034087Z [36;1mjava -version[0m
+2026-11-26T15:02:04.2034311Z [36;1mmvn -version[0m
+2026-11-26T15:02:04.2034674Z [36;1mWrite-Host "Target bytecode level (java.version): $env:JAVA_RELEASE"[0m
+2026-11-26T15:02:04.3191080Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2026-11-26T15:02:04.3191551Z env:
+2026-11-26T15:02:04.3191757Z   JAVA_RELEASE: 17
+2026-11-26T15:02:04.3192150Z   JAVA_HOME: C:\hostedtoolcache\windows\Java_Temurin-Hotspot_jdk\21.0.13-9.0\x64
+2026-11-26T15:02:04.3192779Z   JAVA_HOME_21_X64: C:\hostedtoolcache\windows\Java_Temurin-Hotspot_jdk\21.0.13-9.0\x64
+2026-11-26T15:02:04.3193263Z ##[endgroup]
+2026-11-26T15:02:11.6511376Z openjdk version "21.0.13" 2026-10-20 LTS
+2026-11-26T15:02:11.6512167Z OpenJDK Runtime Environment Temurin-21.0.13+9 (build 21.0.13+9-LTS)
+2026-11-26T15:02:11.6512978Z OpenJDK 64-Bit Server VM Temurin-21.0.13+9 (build 21.0.13+9-LTS, mixed mode, sharing)
+2026-11-26T15:02:16.6592630Z Apache Maven 3.9.16 (2bdd9fddda4b155ebf8000e807eb73fd829a51d5)
+2026-11-26T15:02:16.6593462Z Maven home: C:\ProgramData\chocolatey\lib\maven\apache-maven-3.9.16
+2026-11-26T15:02:16.6594574Z Java version: 21.0.13, vendor: Eclipse Adoptium, runtime: C:\hostedtoolcache\windows\Java_Temurin-Hotspot_jdk\21.0.13-9.0\x64
+2026-11-26T15:02:16.6595686Z Default locale: en_US, platform encoding: UTF-8
+2026-11-26T15:02:16.6596391Z OS name: "windows server 2025", version: "10.0", arch: "amd64", family: "windows"
+2026-11-26T15:02:16.7804077Z Target bytecode level (java.version): 17
+2026-11-26T15:02:16.8427991Z ##[group]Run mvn -B -ntp clean verify "-Djava.version=17"
+2026-11-26T15:02:16.8428484Z [36;1mmvn -B -ntp clean verify "-Djava.version=17"[0m
+2026-11-26T15:02:16.8499651Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2026-11-26T15:02:16.8499986Z env:
+2026-11-26T15:02:16.8500145Z   JAVA_RELEASE: 17
+2026-11-26T15:02:16.8500457Z   JAVA_HOME: C:\hostedtoolcache\windows\Java_Temurin-Hotspot_jdk\21.0.13-9.0\x64
+2026-11-26T15:02:16.8500987Z   JAVA_HOME_21_X64: C:\hostedtoolcache\windows\Java_Temurin-Hotspot_jdk\21.0.13-9.0\x64
+2026-11-26T15:02:16.8501363Z ##[endgroup]
+2026-11-26T15:02:20.4824540Z [INFO] Scanning for projects...
+2026-11-26T15:02:25.0968047Z [INFO] 
+2026-11-26T15:02:25.0969538Z [INFO] ------------------< by.edu.example:task-manager-cicd >------------------
+2026-11-26T15:02:25.0970622Z [INFO] Building task-manager-cicd 1.0.0
+2026-11-26T15:02:25.0971127Z [INFO]   from pom.xml
+2026-11-26T15:02:25.0972649Z [INFO] --------------------------------[ jar ]---------------------------------
+2026-11-26T15:02:31.1863539Z [INFO] 
+2026-11-26T15:02:31.1864232Z [INFO] --- clean:3.4.1:clean (default-clean) @ task-manager-cicd ---
+2026-11-26T15:02:31.4014408Z [INFO] 
+2026-11-26T15:02:31.4015288Z [INFO] --- jacoco:0.8.15:prepare-agent (prepare-agent) @ task-manager-cicd ---
+2026-11-26T15:02:32.6080298Z [INFO] argLine set to -javaagent:C:\\Users\\runneradmin\\.m2\\repository\\org\\jacoco\\org.jacoco.agent\\0.8.15\\org.jacoco.agent-0.8.15-runtime.jar=destfile=D:\\a\\task-manager-cicd-v2\\task-manager-cicd-v2\\target\\jacoco.exec,excludes=by/edu/example/taskmanager/TaskManagerApplication.class
+2026-11-26T15:02:32.6082350Z [INFO] 
+2026-11-26T15:02:32.6082869Z [INFO] --- resources:3.3.1:resources (default-resources) @ task-manager-cicd ---
+2026-11-26T15:02:33.3859084Z [INFO] Copying 1 resource from src\main\resources to target\classes
+2026-11-26T15:02:33.3960542Z [INFO] Copying 0 resource from src\main\resources to target\classes
+2026-11-26T15:02:33.3962789Z [INFO] 
+2026-11-26T15:02:33.3963304Z [INFO] --- compiler:3.14.1:compile (default-compile) @ task-manager-cicd ---
+2026-11-26T15:02:34.2985541Z [INFO] Recompiling the module because of changed dependency.
+2026-11-26T15:02:34.3132755Z [INFO] Compiling 13 source files with javac [debug parameters release 17] to target\classes
+2026-11-26T15:02:36.3299766Z [INFO] 
+2026-11-26T15:02:36.3302033Z [INFO] --- resources:3.3.1:testResources (default-testResources) @ task-manager-cicd ---
+2026-11-26T15:02:36.3396887Z [INFO] skip non existing resourceDirectory D:\a\task-manager-cicd-v2\task-manager-cicd-v2\src\test\resources
+2026-11-26T15:02:36.3398228Z [INFO] 
+2026-11-26T15:02:36.3398849Z [INFO] --- compiler:3.14.1:testCompile (default-testCompile) @ task-manager-cicd ---
+2026-11-26T15:02:36.3526876Z [INFO] Recompiling the module because of changed dependency.
+2026-11-26T15:02:36.3536447Z [INFO] Compiling 3 source files with javac [debug parameters release 17] to target\test-classes
+2026-11-26T15:02:36.9999205Z [INFO] 
+2026-11-26T15:02:37.0000027Z [INFO] --- surefire:3.5.6:test (default-test) @ task-manager-cicd ---
+2026-11-26T15:02:38.0139524Z [INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+2026-11-26T15:02:38.2865074Z [INFO] 
+2026-11-26T15:02:38.2865532Z [INFO] -------------------------------------------------------
+2026-11-26T15:02:38.2866036Z [INFO]  T E S T S
+2026-11-26T15:02:38.2866453Z [INFO] -------------------------------------------------------
+2026-11-26T15:02:40.0071076Z [INFO] Running by.edu.example.taskmanager.service.TaskServiceExtraTest
+2026-11-26T15:02:40.2369283Z [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.146 s -- in by.edu.example.taskmanager.service.TaskServiceExtraTest
+2026-11-26T15:02:40.2375005Z [INFO] Running by.edu.example.taskmanager.service.TaskServiceTest
+2026-11-26T15:02:40.2998416Z [INFO] Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.117 s -- in by.edu.example.taskmanager.service.TaskServiceTest
+2026-11-26T15:02:40.3710534Z [INFO] 
+2026-11-26T15:02:40.3710857Z [INFO] Results:
+2026-11-26T15:02:40.3711149Z [INFO] 
+2026-11-26T15:02:40.3717628Z [INFO] Tests run: 15, Failures: 0, Errors: 0, Skipped: 0
+2026-11-26T15:02:40.3718119Z [INFO] 
+2026-11-26T15:02:40.3763377Z [INFO] 
+2026-11-26T15:02:40.3763816Z [INFO] --- jar:3.4.2:jar (default-jar) @ task-manager-cicd ---
+2026-11-26T15:02:41.7224228Z [INFO] Building jar: D:\a\task-manager-cicd-v2\task-manager-cicd-v2\target\task-manager-cicd-1.0.0.jar
+2026-11-26T15:02:41.7701220Z [INFO] 
+2026-11-26T15:02:41.7702081Z [INFO] --- spring-boot:3.5.16:repackage (repackage) @ task-manager-cicd ---
+2026-11-26T15:02:43.0788032Z [INFO] Replacing main artifact D:\a\task-manager-cicd-v2\task-manager-cicd-v2\target\task-manager-cicd-1.0.0.jar with repackaged archive, adding nested dependencies in BOOT-INF/.
+2026-11-26T15:02:43.0798712Z [INFO] The original artifact has been renamed to D:\a\task-manager-cicd-v2\task-manager-cicd-v2\target\task-manager-cicd-1.0.0.jar.original
+2026-11-26T15:02:43.0802759Z [INFO] 
+2026-11-26T15:02:43.0803358Z [INFO] --- failsafe:3.5.6:integration-test (default) @ task-manager-cicd ---
+2026-11-26T15:02:43.2078866Z [INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+2026-11-26T15:02:43.2487679Z [INFO] 
+2026-11-26T15:02:43.2488514Z [INFO] -------------------------------------------------------
+2026-11-26T15:02:43.2489245Z [INFO]  T E S T S
+2026-11-26T15:02:43.2489820Z [INFO] -------------------------------------------------------
+2026-11-26T15:02:44.4715510Z [INFO] Running by.edu.example.taskmanager.web.TaskControllerIT
+2026-11-26T15:02:44.8685276Z 15:02:44.848 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [by.edu.example.taskmanager.web.TaskControllerIT]: TaskControllerIT does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-26T15:02:45.2017097Z 15:02:45.121 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration by.edu.example.taskmanager.TaskManagerApplication for test class by.edu.example.taskmanager.web.TaskControllerIT
+2026-11-26T15:02:46.0647717Z 
+2026-11-26T15:02:46.0648590Z   .   ____          _            __ _ _
+2026-11-26T15:02:46.0657697Z  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+2026-11-26T15:02:46.0667245Z ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+2026-11-26T15:02:46.0689210Z  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+2026-11-26T15:02:46.0717516Z   '  |____| .__|_| |_|_| |_\__, | / / / /
+2026-11-26T15:02:46.0718348Z  =========|_|==============|___/=/_/_/_/
+2026-11-26T15:02:46.0718809Z 
+2026-11-26T15:02:46.0719214Z  :: Spring Boot ::               (v3.5.16)
+2026-11-26T15:02:46.0752287Z 
+2026-11-26T15:02:46.1766752Z 2026-11-26T15:02:46.109Z  INFO 3892 --- [task-manager-cicd] [           main] b.e.e.taskmanager.web.TaskControllerIT   : Starting TaskControllerIT using Java 17 with PID 3892 (started by runneradmin in D:\a\task-manager-cicd-v2\task-manager-cicd-v2)
+2026-11-26T15:02:46.1770381Z 2026-11-26T15:02:46.111Z  INFO 3892 --- [task-manager-cicd] [           main] b.e.e.taskmanager.web.TaskControllerIT   : No active profile set, falling back to 1 default profile: "default"
+2026-11-26T15:02:47.9847158Z 2026-11-26T15:02:47.913Z  INFO 3892 --- [task-manager-cicd] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
+2026-11-26T15:02:47.9853195Z 2026-11-26T15:02:47.948Z  INFO 3892 --- [task-manager-cicd] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-11-26T15:02:47.9855157Z 2026-11-26T15:02:47.950Z  INFO 3892 --- [task-manager-cicd] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.55]
+2026-11-26T15:02:48.0921173Z 2026-11-26T15:02:48.046Z  INFO 3892 --- [task-manager-cicd] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-11-26T15:02:48.0923598Z 2026-11-26T15:02:48.048Z  INFO 3892 --- [task-manager-cicd] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1874 ms
+2026-11-26T15:02:49.0062786Z 2026-11-26T15:02:48.969Z  INFO 3892 --- [task-manager-cicd] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 62807 (http) with context path '/'
+2026-11-26T15:02:49.0064957Z 2026-11-26T15:02:48.979Z  INFO 3892 --- [task-manager-cicd] [           main] b.e.e.taskmanager.web.TaskControllerIT   : Started TaskControllerIT in 3.541 seconds (process running for 5.608)
+2026-11-26T15:02:49.0772390Z Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build as described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html#0.3
+2026-11-26T15:02:49.3506147Z OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+2026-11-26T15:02:49.4074118Z WARNING: A Java agent has been loaded dynamically (C:\Users\runneradmin\.m2\repository\net\bytebuddy\byte-buddy-agent\1.17.8\byte-buddy-agent-1.17.8.jar)
+2026-11-26T15:02:49.4075976Z WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+2026-11-26T15:02:49.4077461Z WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+2026-11-26T15:02:49.4078779Z WARNING: Dynamic loading of agents will be disallowed by default in a future release
+2026-11-26T15:02:50.3609819Z 2026-11-26T15:02:50.297Z  INFO 3892 --- [task-manager-cicd] [o-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-11-26T15:02:50.3612051Z 2026-11-26T15:02:50.297Z  INFO 3892 --- [task-manager-cicd] [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-11-26T15:02:50.3613957Z 2026-11-26T15:02:50.299Z  INFO 3892 --- [task-manager-cicd] [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2026-11-26T15:02:50.8467001Z [INFO] Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.362 s -- in by.edu.example.taskmanager.web.TaskControllerIT
+2026-11-26T15:02:50.9350492Z [INFO] 
+2026-11-26T15:02:50.9350865Z [INFO] Results:
+2026-11-26T15:02:50.9351215Z [INFO] 
+2026-11-26T15:02:50.9356512Z [INFO] Tests run: 11, Failures: 0, Errors: 0, Skipped: 0
+2026-11-26T15:02:50.9357491Z [INFO] 
+2026-11-26T15:02:50.9422500Z [INFO] 
+2026-11-26T15:02:50.9423017Z [INFO] --- failsafe:3.5.6:verify (default) @ task-manager-cicd ---
+2026-11-26T15:02:51.4189222Z [INFO] 
+2026-11-26T15:02:51.4189768Z [INFO] --- jacoco:0.8.15:report (report) @ task-manager-cicd ---
+2026-11-26T15:02:51.4231980Z [INFO] Loading execution data file D:\a\task-manager-cicd-v2\task-manager-cicd-v2\target\jacoco.exec
+2026-11-26T15:02:51.5349883Z [INFO] Analyzed bundle 'task-manager-cicd' with 12 classes
+2026-11-26T15:02:51.6835962Z [INFO] ------------------------------------------------------------------------
+2026-11-26T15:02:51.6837026Z [INFO] BUILD SUCCESS
+2026-11-26T15:02:51.6837720Z [INFO] ------------------------------------------------------------------------
+2026-11-26T15:02:51.6838463Z [INFO] Total time:  31.258 s
+2026-11-26T15:02:51.6839042Z [INFO] Finished at: 2026-11-26T15:02:51Z
+2026-11-26T15:02:51.6839744Z [INFO] ------------------------------------------------------------------------
+2026-11-26T15:02:51.8648925Z ##[group]Run $out = (javap -verbose -cp target/classes by.edu.example.taskmanager.TaskManagerApplication | Select-String 'major version').Line.Trim()
+2026-11-26T15:02:51.8650107Z [36;1m$out = (javap -verbose -cp target/classes by.edu.example.taskmanager.TaskManagerApplication | Select-String 'major version').Line.Trim()[0m
+2026-11-26T15:02:51.8650809Z [36;1mWrite-Host "TaskManagerApplication.class -> $out"[0m
+2026-11-26T15:02:51.8651166Z [36;1m"| JDK 21 | $out |" >> $env:GITHUB_STEP_SUMMARY[0m
+2026-11-26T15:02:51.8721470Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2026-11-26T15:02:51.8721804Z env:
+2026-11-26T15:02:51.8721974Z   JAVA_RELEASE: 17
+2026-11-26T15:02:51.8722288Z   JAVA_HOME: C:\hostedtoolcache\windows\Java_Temurin-Hotspot_jdk\21.0.13-9.0\x64
+2026-11-26T15:02:51.8723105Z   JAVA_HOME_21_X64: C:\hostedtoolcache\windows\Java_Temurin-Hotspot_jdk\21.0.13-9.0\x64
+2026-11-26T15:02:51.8723485Z ##[endgroup]
+2026-11-26T15:02:52.7779897Z TaskManagerApplication.class -> major version: 61
+2026-11-26T15:02:52.8682780Z ##[group]Run if (Test-Path 'target/surefire-reports') {
+2026-11-26T15:02:52.8683365Z [36;1mif (Test-Path 'target/surefire-reports') {[0m
+2026-11-26T15:02:52.8683720Z [36;1m  mvn -B -ntp surefire-report:report-only[0m
+2026-11-26T15:02:52.8684061Z [36;1m  if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }[0m
+2026-11-26T15:02:52.8684348Z [36;1m} else {[0m
+2026-11-26T15:02:52.8684576Z [36;1m  Write-Host 'Surefire reports are absent.'[0m
+2026-11-26T15:02:52.8684854Z [36;1m}[0m
+2026-11-26T15:02:52.8754142Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2026-11-26T15:02:52.8754488Z env:
+2026-11-26T15:02:52.8754660Z   JAVA_RELEASE: 17
+2026-11-26T15:02:52.8754985Z   JAVA_HOME: C:\hostedtoolcache\windows\Java_Temurin-Hotspot_jdk\21.0.13-9.0\x64
+2026-11-26T15:02:52.8755508Z   JAVA_HOME_21_X64: C:\hostedtoolcache\windows\Java_Temurin-Hotspot_jdk\21.0.13-9.0\x64
+2026-11-26T15:02:52.8755892Z ##[endgroup]
+2026-11-26T15:02:55.1038139Z [INFO] Scanning for projects...
+2026-11-26T15:02:56.3134938Z [INFO] 
+2026-11-26T15:02:56.3136395Z [INFO] ------------------< by.edu.example:task-manager-cicd >------------------
+2026-11-26T15:02:56.3137109Z [INFO] Building task-manager-cicd 1.0.0
+2026-11-26T15:02:56.3140304Z [INFO]   from pom.xml
+2026-11-26T15:02:56.3141246Z [INFO] --------------------------------[ jar ]---------------------------------
+2026-11-26T15:02:56.3243755Z [INFO] 
+2026-11-26T15:02:56.3244986Z [INFO] --- surefire-report:3.5.6:report-only (default-cli) @ task-manager-cicd ---
+2026-11-26T15:03:00.5226001Z [WARNING] Unable to find a URL to the parent project. The parent menu will NOT be added.
+2026-11-26T15:03:00.5714946Z [INFO] Rendering content with org.apache.maven.skins:maven-fluido-skin:jar:2.0.0-M9 skin
+2026-11-26T15:03:00.6397984Z [WARNING] Unable to locate Test Source XRef to link to -- DISABLED
+2026-11-26T15:03:01.0533201Z [INFO] ------------------------------------------------------------------------
+2026-11-26T15:03:01.0538212Z [INFO] BUILD SUCCESS
+2026-11-26T15:03:01.0539029Z [INFO] ------------------------------------------------------------------------
+2026-11-26T15:03:01.0556254Z [INFO] Total time:  5.983 s
+2026-11-26T15:03:01.0558140Z [INFO] Finished at: 2026-11-26T15:03:01Z
+2026-11-26T15:03:01.0559010Z [INFO] ------------------------------------------------------------------------
+2026-11-26T15:03:01.1662368Z ##[group]Run actions/upload-artifact@v4
+2026-11-26T15:03:01.1662700Z with:
+2026-11-26T15:03:01.1662884Z   name: test-reports-jdk21
+2026-11-26T15:03:01.1663422Z   path: target/surefire-reports/**
+target/failsafe-reports/**
+target/site/surefire-report.html
+target/site/jacoco/**
+
+2026-11-26T15:03:01.1663949Z   if-no-files-found: warn
+2026-11-26T15:03:01.1664167Z   retention-days: 7
+2026-11-26T15:03:01.1664359Z   compression-level: 6
+2026-11-26T15:03:01.1664550Z   overwrite: false
+2026-11-26T15:03:01.1664742Z   include-hidden-files: false
+2026-11-26T15:03:01.1664950Z env:
+2026-11-26T15:03:01.1665124Z   JAVA_RELEASE: 17
+2026-11-26T15:03:01.1665437Z   JAVA_HOME: C:\hostedtoolcache\windows\Java_Temurin-Hotspot_jdk\21.0.13-9.0\x64
+2026-11-26T15:03:01.1665940Z   JAVA_HOME_21_X64: C:\hostedtoolcache\windows\Java_Temurin-Hotspot_jdk\21.0.13-9.0\x64
+2026-11-26T15:03:01.1666323Z ##[endgroup]
+2026-11-26T15:03:01.3570178Z (node:4884) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-11-26T15:03:01.3570888Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-11-26T15:03:01.3884053Z Multiple search paths detected. Calculating the least common ancestor of all paths
+2026-11-26T15:03:01.3888077Z The least common ancestor is D:\a\task-manager-cicd-v2\task-manager-cicd-v2\target. This will be the root directory of the artifact
+2026-11-26T15:03:01.3889900Z With the provided path, there will be 67 files uploaded
+2026-11-26T15:03:01.3895172Z Artifact name is valid!
+2026-11-26T15:03:01.3897718Z Root directory input is valid!
+2026-11-26T15:03:01.6548674Z Beginning upload of artifact content to blob storage
+2026-11-26T15:03:01.7738069Z (node:4884) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-11-26T15:03:02.0119521Z Uploaded bytes 182748
+2026-11-26T15:03:02.0549995Z Finished uploading artifact content to blob storage!
+2026-11-26T15:03:02.0551734Z SHA256 digest of uploaded artifact zip is beb4e7233f78ed3797a924fea85cd6cfe168f9698e18f9582cae516d2533ec73
+2026-11-26T15:03:02.0554145Z Finalizing artifact upload
+2026-11-26T15:03:02.4486602Z Artifact test-reports-jdk21.zip successfully finalized. Artifact ID 15131671033
+2026-11-26T15:03:02.4488206Z Artifact test-reports-jdk21 has been successfully uploaded! Final size is 182748 bytes. Artifact ID is 15131671033
+2026-11-26T15:03:02.4498019Z Artifact download URL: https://github.com/Sofilda/task-manager-cicd-v2/actions/runs/45844931978/artifacts/15131671033
+2026-11-26T15:03:02.4822326Z ##[group]Run actions/upload-artifact@v4
+2026-11-26T15:03:02.4822671Z with:
+2026-11-26T15:03:02.4822874Z   name: task-manager-jar-jdk21
+2026-11-26T15:03:02.4823139Z   path: target/task-manager-cicd-1.0.0.jar
+2026-11-26T15:03:02.4823413Z   if-no-files-found: error
+2026-11-26T15:03:02.4823626Z   retention-days: 7
+2026-11-26T15:03:02.4823821Z   compression-level: 6
+2026-11-26T15:03:02.4824018Z   overwrite: false
+2026-11-26T15:03:02.4824210Z   include-hidden-files: false
+2026-11-26T15:03:02.4824423Z env:
+2026-11-26T15:03:02.4824586Z   JAVA_RELEASE: 17
+2026-11-26T15:03:02.4824896Z   JAVA_HOME: C:\hostedtoolcache\windows\Java_Temurin-Hotspot_jdk\21.0.13-9.0\x64
+2026-11-26T15:03:02.4825408Z   JAVA_HOME_21_X64: C:\hostedtoolcache\windows\Java_Temurin-Hotspot_jdk\21.0.13-9.0\x64
+2026-11-26T15:03:02.4825793Z ##[endgroup]
+2026-11-26T15:03:02.6791258Z (node:5020) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-11-26T15:03:02.6792553Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-11-26T15:03:02.6850293Z With the provided path, there will be 1 file uploaded
+2026-11-26T15:03:02.6855264Z Artifact name is valid!
+2026-11-26T15:03:02.6857545Z Root directory input is valid!
+2026-11-26T15:03:02.9405945Z Beginning upload of artifact content to blob storage
+2026-11-26T15:03:03.2634370Z (node:5020) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-11-26T15:03:03.8282177Z Uploaded bytes 8388608
+2026-11-26T15:03:04.1282870Z Uploaded bytes 16777216
+2026-11-26T15:03:04.2670437Z Uploaded bytes 20369140
+2026-11-26T15:03:04.3004380Z Finished uploading artifact content to blob storage!
+2026-11-26T15:03:04.3006792Z SHA256 digest of uploaded artifact zip is 1f9da7e85fd80ef6ed8db60e48ad4a807c7f2ac8f2e50a19239d9020638250b3
+2026-11-26T15:03:04.3009856Z Finalizing artifact upload
+2026-11-26T15:03:04.7213742Z Artifact task-manager-jar-jdk21.zip successfully finalized. Artifact ID 15131526097
+2026-11-26T15:03:04.7215177Z Artifact task-manager-jar-jdk21 has been successfully uploaded! Final size is 20369140 bytes. Artifact ID is 15131526097
+2026-11-26T15:03:04.7226166Z Artifact download URL: https://github.com/Sofilda/task-manager-cicd-v2/actions/runs/45844931978/artifacts/15131526097
+2026-11-26T15:03:04.7601778Z Post job cleanup.
+2026-11-26T15:03:04.9283542Z (node:5124) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-11-26T15:03:04.9284260Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-11-26T15:03:05.0551390Z [command]"C:\Program Files\Git\usr\bin\tar.exe" --posix -cf cache.tzst --exclude cache.tzst -P -C D:/a/task-manager-cicd-v2/task-manager-cicd-v2 --files-from manifest.txt --force-local --use-compress-program "zstd -T0"
+2026-11-26T15:03:06.1038547Z Failed to save: Unable to reserve cache with key setup-java-Windows-x64-maven-8e2c2da7fd7da3ee2c2d298bd98146df85aaaee53e9780d39c7a616deaff15a6, another job may be creating this cache.
+2026-11-26T15:03:06.1084834Z Cache saved with the key: setup-java-Windows-x64-maven-8e2c2da7fd7da3ee2c2d298bd98146df85aaaee53e9780d39c7a616deaff15a6
+2026-11-26T15:03:06.1425835Z Post job cleanup.
+2026-11-26T15:03:06.3329114Z [command]"C:\Program Files\Git\bin\git.exe" version
+2026-11-26T15:03:06.3679061Z git version 2.56.1.windows.1
+2026-11-26T15:03:06.3754204Z Temporarily overriding HOME='D:\a\_temp\1b732870-7904-4188-aae8-c34fae58c01b' before making global git config changes
+2026-11-26T15:03:06.3755341Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-26T15:03:06.3765294Z [command]"C:\Program Files\Git\bin\git.exe" config --global --add safe.directory D:\a\task-manager-cicd-v2\task-manager-cicd-v2
+2026-11-26T15:03:06.4160467Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp core\.sshCommand
+2026-11-26T15:03:06.4676345Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\""
+2026-11-26T15:03:07.0782719Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-26T15:03:07.1124752Z http.https://github.com/.extraheader
+2026-11-26T15:03:07.1173965Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset-all http.https://github.com/.extraheader
+2026-11-26T15:03:07.1561331Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\""
+2026-11-26T15:03:07.7270748Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-26T15:03:07.7642573Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "git config --local --show-origin --name-only --get-regexp remote.origin.url"
+2026-11-26T15:03:08.3357433Z Cleaning up orphan processes
+2026-11-26T15:03:08.3612470Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-java@v4, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
