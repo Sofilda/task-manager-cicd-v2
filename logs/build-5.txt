@@ -1,0 +1,114 @@
+Started by user unknown or anonymous
+Obtained Jenkinsfile from git https://github.com/Sofilda/task-manager-cicd-v2.git
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Running on Jenkins in /var/jenkins_home/jobs/Task-Manager-Variant2/workspace
+[Pipeline] {
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] timestamps
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Declarative: Tool Install)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Validate Parameters)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] script
+[Pipeline] {
+[Pipeline] echo
+[2026-11-26T15:12:42.482Z] Ветка: no-such-branch; режим проверки: FULL
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Checkout)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] echo
+[2026-11-26T15:12:42.549Z] Получение кода из ветки no-such-branch
+[Pipeline] git
+[2026-11-26T15:12:42.553Z] Selected Git installation does not exist. Using Default
+[2026-11-26T15:12:42.553Z] The recommended git tool is: NONE
+[2026-11-26T15:12:42.553Z] No credentials specified
+[2026-11-26T15:12:42.553Z]  > git rev-parse --resolve-git-dir /var/jenkins_home/jobs/Task-Manager-Variant2/workspace/.git # timeout=10
+[2026-11-26T15:12:42.556Z] Fetching changes from the remote Git repository
+[2026-11-26T15:12:42.557Z]  > git config remote.origin.url https://github.com/Sofilda/task-manager-cicd-v2.git # timeout=10
+[2026-11-26T15:12:42.559Z] Fetching upstream changes from https://github.com/Sofilda/task-manager-cicd-v2.git
+[2026-11-26T15:12:42.559Z]  > git --version # timeout=10
+[2026-11-26T15:12:42.561Z]  > git --version # 'git version 2.47.3'
+[2026-11-26T15:12:42.561Z]  > git fetch --tags --force --progress -- https://github.com/Sofilda/task-manager-cicd-v2.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+[2026-11-26T15:12:42.800Z]  > git rev-parse refs/remotes/origin/no-such-branch^{commit} # timeout=10
+[2026-11-26T15:12:42.802Z]  > git rev-parse origin/no-such-branch^{commit} # timeout=10
+[2026-11-26T15:12:42.804Z] ERROR: Couldn't find any revision to build. Verify the repository and branch configuration for this job.
+[2026-11-26T15:12:42.804Z] ERROR: Maximum checkout retry attempts reached, aborting
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Toolchain)
+Stage "Toolchain" skipped due to earlier failure(s)
+[Pipeline] getContext
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Compile)
+Stage "Compile" skipped due to earlier failure(s)
+[Pipeline] getContext
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Unit Tests)
+Stage "Unit Tests" skipped due to earlier failure(s)
+[Pipeline] getContext
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Integration Tests and Package)
+Stage "Integration Tests and Package" skipped due to earlier failure(s)
+[Pipeline] getContext
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Declarative: Post Actions)
+[Pipeline] script
+[Pipeline] {
+[Pipeline] echo
+[2026-11-26T15:12:42.962Z] Код ветки не получен — отчёты тестов не публикуются
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] echo
+[2026-11-26T15:12:42.976Z] Проверка ветки no-such-branch в режиме FULL завершилась ошибкой — см. журнал этапа
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // timestamps
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+ERROR: Couldn't find any revision to build. Verify the repository and branch configuration for this job.
+Finished: FAILURE

@@ -1,0 +1,351 @@
+Started by user unknown or anonymous
+Obtained Jenkinsfile from git https://github.com/Sofilda/task-manager-cicd-v2.git
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Running on Jenkins in /var/jenkins_home/jobs/Task-Manager-Variant2/workspace
+[Pipeline] {
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] timestamps
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Declarative: Tool Install)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Validate Parameters)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] script
+[Pipeline] {
+[Pipeline] echo
+[2026-11-26T15:11:05.029Z] Ветка: main; режим проверки: FULL
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Checkout)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] echo
+[2026-11-26T15:11:05.159Z] Получение кода из ветки main
+[Pipeline] git
+[2026-11-26T15:11:05.186Z] Selected Git installation does not exist. Using Default
+[2026-11-26T15:11:05.186Z] The recommended git tool is: NONE
+[2026-11-26T15:11:05.186Z] No credentials specified
+[2026-11-26T15:11:05.187Z] Cloning the remote Git repository
+[2026-11-26T15:11:05.188Z] Cloning repository https://github.com/Sofilda/task-manager-cicd-v2.git
+[2026-11-26T15:11:05.188Z]  > git init /var/jenkins_home/jobs/Task-Manager-Variant2/workspace # timeout=10
+[2026-11-26T15:11:05.192Z] Fetching upstream changes from https://github.com/Sofilda/task-manager-cicd-v2.git
+[2026-11-26T15:11:05.192Z]  > git --version # timeout=10
+[2026-11-26T15:11:05.195Z]  > git --version # 'git version 2.47.3'
+[2026-11-26T15:11:05.195Z]  > git fetch --tags --force --progress -- https://github.com/Sofilda/task-manager-cicd-v2.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+[2026-11-26T15:11:05.775Z]  > git config remote.origin.url https://github.com/Sofilda/task-manager-cicd-v2.git # timeout=10
+[2026-11-26T15:11:05.778Z]  > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+[2026-11-26T15:11:05.782Z] Avoid second fetch
+[2026-11-26T15:11:05.784Z]  > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
+[2026-11-26T15:11:05.788Z] Checking out Revision 259bfae4cdc8c7c21c9dcc8fbc8789e5d02dd4d5 (refs/remotes/origin/main)
+[2026-11-26T15:11:05.789Z]  > git config core.sparsecheckout # timeout=10
+[2026-11-26T15:11:05.793Z]  > git checkout -f 259bfae4cdc8c7c21c9dcc8fbc8789e5d02dd4d5 # timeout=10
+[2026-11-26T15:11:05.796Z]  > git branch -a -v --no-abbrev # timeout=10
+[2026-11-26T15:11:05.799Z]  > git checkout -b main 259bfae4cdc8c7c21c9dcc8fbc8789e5d02dd4d5 # timeout=10
+[2026-11-26T15:11:05.804Z] Commit message: "Jenkinsfile: publish reports only after successful checkout"
+[2026-11-26T15:11:05.805Z] First time build. Skipping changelog.
+[Pipeline] script
+[Pipeline] {
+[Pipeline] isUnix
+[Pipeline] sh
+[2026-11-26T15:11:06.107Z] + git rev-parse --short HEAD
+[Pipeline] echo
+[2026-11-26T15:11:06.128Z] Проверяется commit 259bfae из ветки main
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Toolchain)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] isUnix
+[Pipeline] sh
+[2026-11-26T15:11:06.622Z] + java -version
+[2026-11-26T15:11:06.623Z] openjdk version "21.0.13.1" 2026-11-17 LTS
+[2026-11-26T15:11:06.623Z] OpenJDK Runtime Environment Temurin-21.0.13.1+2 (build 21.0.13.1+2-LTS)
+[2026-11-26T15:11:06.623Z] OpenJDK 64-Bit Server VM Temurin-21.0.13.1+2 (build 21.0.13.1+2-LTS, mixed mode)
+[Pipeline] isUnix
+[Pipeline] sh
+[2026-11-26T15:11:06.889Z] + mvn -version
+[2026-11-26T15:11:06.889Z] [1mApache Maven 3.9.9[m
+[2026-11-26T15:11:06.889Z] Maven home: /usr/share/maven
+[2026-11-26T15:11:06.889Z] Java version: 21.0.13.1, vendor: Eclipse Adoptium, runtime: /opt/java/openjdk
+[2026-11-26T15:11:06.889Z] Default locale: en, platform encoding: UTF-8
+[2026-11-26T15:11:06.889Z] OS name: "linux", version: "7.0.0-1016-aws", arch: "amd64", family: "unix"
+[Pipeline] isUnix
+[Pipeline] sh
+[2026-11-26T15:11:07.153Z] + git --version
+[2026-11-26T15:11:07.153Z] git version 2.47.3
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Compile)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] isUnix
+[Pipeline] sh
+[2026-11-26T15:11:07.523Z] + mvn -B -ntp clean test-compile
+[2026-11-26T15:11:08.435Z] [INFO] Scanning for projects...
+[2026-11-26T15:11:11.665Z] [INFO] 
+[2026-11-26T15:11:11.665Z] [INFO] ------------------< by.edu.example:task-manager-cicd >------------------
+[2026-11-26T15:11:11.665Z] [INFO] Building task-manager-cicd 1.0.0
+[2026-11-26T15:11:11.665Z] [INFO]   from pom.xml
+[2026-11-26T15:11:11.665Z] [INFO] --------------------------------[ jar ]---------------------------------
+[2026-11-26T15:11:18.147Z] [INFO] 
+[2026-11-26T15:11:18.147Z] [INFO] --- clean:3.4.1:clean (default-clean) @ task-manager-cicd ---
+[2026-11-26T15:11:18.147Z] [INFO] 
+[2026-11-26T15:11:18.147Z] [INFO] --- jacoco:0.8.15:prepare-agent (prepare-agent) @ task-manager-cicd ---
+[2026-11-26T15:11:19.491Z] [INFO] argLine set to -javaagent:/var/jenkins_home/.m2/repository/org/jacoco/org.jacoco.agent/0.8.15/org.jacoco.agent-0.8.15-runtime.jar=destfile=/var/jenkins_home/jobs/Task-Manager-Variant2/workspace/target/jacoco.exec,excludes=by/edu/example/taskmanager/TaskManagerApplication.class
+[2026-11-26T15:11:19.491Z] [INFO] 
+[2026-11-26T15:11:19.492Z] [INFO] --- resources:3.3.1:resources (default-resources) @ task-manager-cicd ---
+[2026-11-26T15:11:20.403Z] [INFO] Copying 1 resource from src/main/resources to target/classes
+[2026-11-26T15:11:20.403Z] [INFO] Copying 0 resource from src/main/resources to target/classes
+[2026-11-26T15:11:20.403Z] [INFO] 
+[2026-11-26T15:11:20.403Z] [INFO] --- compiler:3.14.1:compile (default-compile) @ task-manager-cicd ---
+[2026-11-26T15:11:20.954Z] [INFO] Recompiling the module because of changed dependency.
+[2026-11-26T15:11:20.954Z] [INFO] Compiling 13 source files with javac [debug parameters release 17] to target/classes
+[2026-11-26T15:11:21.867Z] [INFO] 
+[2026-11-26T15:11:21.867Z] [INFO] --- resources:3.3.1:testResources (default-testResources) @ task-manager-cicd ---
+[2026-11-26T15:11:21.867Z] [INFO] skip non existing resourceDirectory /var/jenkins_home/jobs/Task-Manager-Variant2/workspace/src/test/resources
+[2026-11-26T15:11:21.867Z] [INFO] 
+[2026-11-26T15:11:21.867Z] [INFO] --- compiler:3.14.1:testCompile (default-testCompile) @ task-manager-cicd ---
+[2026-11-26T15:11:21.867Z] [INFO] Recompiling the module because of changed dependency.
+[2026-11-26T15:11:21.867Z] [INFO] Compiling 2 source files with javac [debug parameters release 17] to target/test-classes
+[2026-11-26T15:11:22.118Z] [INFO] ------------------------------------------------------------------------
+[2026-11-26T15:11:22.118Z] [INFO] BUILD SUCCESS
+[2026-11-26T15:11:22.118Z] [INFO] ------------------------------------------------------------------------
+[2026-11-26T15:11:22.118Z] [INFO] Total time:  13.721 s
+[2026-11-26T15:11:22.118Z] [INFO] Finished at: 2026-11-26T15:11:21Z
+[2026-11-26T15:11:22.118Z] [INFO] ------------------------------------------------------------------------
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Unit Tests)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] isUnix
+[Pipeline] sh
+[2026-11-26T15:11:23.981Z] + mvn -B -ntp test
+[2026-11-26T15:11:24.894Z] [INFO] Scanning for projects...
+[2026-11-26T15:11:24.894Z] [INFO] 
+[2026-11-26T15:11:24.894Z] [INFO] ------------------< by.edu.example:task-manager-cicd >------------------
+[2026-11-26T15:11:24.894Z] [INFO] Building task-manager-cicd 1.0.0
+[2026-11-26T15:11:24.894Z] [INFO]   from pom.xml
+[2026-11-26T15:11:24.894Z] [INFO] --------------------------------[ jar ]---------------------------------
+[2026-11-26T15:11:25.807Z] [INFO] 
+[2026-11-26T15:11:25.807Z] [INFO] --- jacoco:0.8.15:prepare-agent (prepare-agent) @ task-manager-cicd ---
+[2026-11-26T15:11:25.807Z] [INFO] argLine set to -javaagent:/var/jenkins_home/.m2/repository/org/jacoco/org.jacoco.agent/0.8.15/org.jacoco.agent-0.8.15-runtime.jar=destfile=/var/jenkins_home/jobs/Task-Manager-Variant2/workspace/target/jacoco.exec,excludes=by/edu/example/taskmanager/TaskManagerApplication.class
+[2026-11-26T15:11:25.807Z] [INFO] 
+[2026-11-26T15:11:25.807Z] [INFO] --- resources:3.3.1:resources (default-resources) @ task-manager-cicd ---
+[2026-11-26T15:11:25.807Z] [INFO] Copying 1 resource from src/main/resources to target/classes
+[2026-11-26T15:11:25.807Z] [INFO] Copying 0 resource from src/main/resources to target/classes
+[2026-11-26T15:11:25.807Z] [INFO] 
+[2026-11-26T15:11:25.807Z] [INFO] --- compiler:3.14.1:compile (default-compile) @ task-manager-cicd ---
+[2026-11-26T15:11:25.807Z] [INFO] Nothing to compile - all classes are up to date.
+[2026-11-26T15:11:25.807Z] [INFO] 
+[2026-11-26T15:11:25.807Z] [INFO] --- resources:3.3.1:testResources (default-testResources) @ task-manager-cicd ---
+[2026-11-26T15:11:25.807Z] [INFO] skip non existing resourceDirectory /var/jenkins_home/jobs/Task-Manager-Variant2/workspace/src/test/resources
+[2026-11-26T15:11:25.807Z] [INFO] 
+[2026-11-26T15:11:25.807Z] [INFO] --- compiler:3.14.1:testCompile (default-testCompile) @ task-manager-cicd ---
+[2026-11-26T15:11:25.807Z] [INFO] Nothing to compile - all classes are up to date.
+[2026-11-26T15:11:25.807Z] [INFO] 
+[2026-11-26T15:11:25.807Z] [INFO] --- surefire:3.5.6:test (default-test) @ task-manager-cicd ---
+[2026-11-26T15:11:27.154Z] [INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[2026-11-26T15:11:27.404Z] [INFO] 
+[2026-11-26T15:11:27.404Z] [INFO] -------------------------------------------------------
+[2026-11-26T15:11:27.404Z] [INFO]  T E S T S
+[2026-11-26T15:11:27.404Z] [INFO] -------------------------------------------------------
+[2026-11-26T15:11:27.955Z] [INFO] Running by.edu.example.taskmanager.service.TaskServiceTest
+[2026-11-26T15:11:28.209Z] [INFO] Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.109 s -- in by.edu.example.taskmanager.service.TaskServiceTest
+[2026-11-26T15:11:28.209Z] [INFO] 
+[2026-11-26T15:11:28.209Z] [INFO] Results:
+[2026-11-26T15:11:28.209Z] [INFO] 
+[2026-11-26T15:11:28.209Z] [INFO] Tests run: 14, Failures: 0, Errors: 0, Skipped: 0
+[2026-11-26T15:11:28.209Z] [INFO] 
+[2026-11-26T15:11:28.209Z] [INFO] ------------------------------------------------------------------------
+[2026-11-26T15:11:28.209Z] [INFO] BUILD SUCCESS
+[2026-11-26T15:11:28.209Z] [INFO] ------------------------------------------------------------------------
+[2026-11-26T15:11:28.209Z] [INFO] Total time:  3.456 s
+[2026-11-26T15:11:28.209Z] [INFO] Finished at: 2026-11-26T15:11:28Z
+[2026-11-26T15:11:28.209Z] [INFO] ------------------------------------------------------------------------
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Integration Tests and Package)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] isUnix
+[Pipeline] sh
+[2026-11-26T15:11:28.549Z] + mvn -B -ntp verify -DskipUnitTests=true
+[2026-11-26T15:11:29.461Z] [INFO] Scanning for projects...
+[2026-11-26T15:11:29.461Z] [INFO] 
+[2026-11-26T15:11:29.461Z] [INFO] ------------------< by.edu.example:task-manager-cicd >------------------
+[2026-11-26T15:11:29.461Z] [INFO] Building task-manager-cicd 1.0.0
+[2026-11-26T15:11:29.461Z] [INFO]   from pom.xml
+[2026-11-26T15:11:29.461Z] [INFO] --------------------------------[ jar ]---------------------------------
+[2026-11-26T15:11:30.373Z] [INFO] 
+[2026-11-26T15:11:30.373Z] [INFO] --- jacoco:0.8.15:prepare-agent (prepare-agent) @ task-manager-cicd ---
+[2026-11-26T15:11:30.376Z] [INFO] argLine set to -javaagent:/var/jenkins_home/.m2/repository/org/jacoco/org.jacoco.agent/0.8.15/org.jacoco.agent-0.8.15-runtime.jar=destfile=/var/jenkins_home/jobs/Task-Manager-Variant2/workspace/target/jacoco.exec,excludes=by/edu/example/taskmanager/TaskManagerApplication.class
+[2026-11-26T15:11:30.376Z] [INFO] 
+[2026-11-26T15:11:30.376Z] [INFO] --- resources:3.3.1:resources (default-resources) @ task-manager-cicd ---
+[2026-11-26T15:11:30.376Z] [INFO] Copying 1 resource from src/main/resources to target/classes
+[2026-11-26T15:11:30.376Z] [INFO] Copying 0 resource from src/main/resources to target/classes
+[2026-11-26T15:11:30.376Z] [INFO] 
+[2026-11-26T15:11:30.376Z] [INFO] --- compiler:3.14.1:compile (default-compile) @ task-manager-cicd ---
+[2026-11-26T15:11:30.627Z] [INFO] Nothing to compile - all classes are up to date.
+[2026-11-26T15:11:30.627Z] [INFO] 
+[2026-11-26T15:11:30.627Z] [INFO] --- resources:3.3.1:testResources (default-testResources) @ task-manager-cicd ---
+[2026-11-26T15:11:30.627Z] [INFO] skip non existing resourceDirectory /var/jenkins_home/jobs/Task-Manager-Variant2/workspace/src/test/resources
+[2026-11-26T15:11:30.627Z] [INFO] 
+[2026-11-26T15:11:30.627Z] [INFO] --- compiler:3.14.1:testCompile (default-testCompile) @ task-manager-cicd ---
+[2026-11-26T15:11:30.627Z] [INFO] Nothing to compile - all classes are up to date.
+[2026-11-26T15:11:30.627Z] [INFO] 
+[2026-11-26T15:11:30.627Z] [INFO] --- surefire:3.5.6:test (default-test) @ task-manager-cicd ---
+[2026-11-26T15:11:30.627Z] [INFO] Tests are skipped.
+[2026-11-26T15:11:30.627Z] [INFO] 
+[2026-11-26T15:11:30.627Z] [INFO] --- jar:3.4.2:jar (default-jar) @ task-manager-cicd ---
+[2026-11-26T15:11:32.489Z] [INFO] Building jar: /var/jenkins_home/jobs/Task-Manager-Variant2/workspace/target/task-manager-cicd-1.0.0.jar
+[2026-11-26T15:11:32.490Z] [INFO] 
+[2026-11-26T15:11:32.490Z] [INFO] --- spring-boot:3.5.16:repackage (repackage) @ task-manager-cicd ---
+[2026-11-26T15:11:33.401Z] [INFO] Replacing main artifact /var/jenkins_home/jobs/Task-Manager-Variant2/workspace/target/task-manager-cicd-1.0.0.jar with repackaged archive, adding nested dependencies in BOOT-INF/.
+[2026-11-26T15:11:33.401Z] [INFO] The original artifact has been renamed to /var/jenkins_home/jobs/Task-Manager-Variant2/workspace/target/task-manager-cicd-1.0.0.jar.original
+[2026-11-26T15:11:33.401Z] [INFO] 
+[2026-11-26T15:11:33.401Z] [INFO] --- failsafe:3.5.6:integration-test (default) @ task-manager-cicd ---
+[2026-11-26T15:11:33.401Z] [INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[2026-11-26T15:11:33.401Z] [INFO] 
+[2026-11-26T15:11:33.401Z] [INFO] -------------------------------------------------------
+[2026-11-26T15:11:33.401Z] [INFO]  T E S T S
+[2026-11-26T15:11:33.401Z] [INFO] -------------------------------------------------------
+[2026-11-26T15:11:34.314Z] [INFO] Running by.edu.example.taskmanager.web.TaskControllerIT
+[2026-11-26T15:11:34.564Z] 15:11:34.370 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [by.edu.example.taskmanager.web.TaskControllerIT]: TaskControllerIT does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+[2026-11-26T15:11:34.565Z] 15:11:34.520 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration by.edu.example.taskmanager.TaskManagerApplication for test class by.edu.example.taskmanager.web.TaskControllerIT
+[2026-11-26T15:11:35.477Z] 
+[2026-11-26T15:11:35.477Z]   .   ____          _            __ _ _
+[2026-11-26T15:11:35.477Z]  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+[2026-11-26T15:11:35.477Z] ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+[2026-11-26T15:11:35.477Z]  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+[2026-11-26T15:11:35.477Z]   '  |____| .__|_| |_|_| |_\__, | / / / /
+[2026-11-26T15:11:35.477Z]  =========|_|==============|___/=/_/_/_/
+[2026-11-26T15:11:35.477Z] 
+[2026-11-26T15:11:35.477Z]  :: Spring Boot ::               (v3.5.16)
+[2026-11-26T15:11:35.477Z] 
+[2026-11-26T15:11:35.477Z] 2026-11-26T15:11:35.160Z  INFO 1612 --- [task-manager-cicd] [           main] b.e.e.taskmanager.web.TaskControllerIT   : Starting TaskControllerIT using Java 21.0.13.1 with PID 1612 (started by jenkins in /var/jenkins_home/jobs/Task-Manager-Variant2/workspace)
+[2026-11-26T15:11:35.477Z] 2026-11-26T15:11:35.162Z  INFO 1612 --- [task-manager-cicd] [           main] b.e.e.taskmanager.web.TaskControllerIT   : No active profile set, falling back to 1 default profile: "default"
+[2026-11-26T15:11:36.389Z] 2026-11-26T15:11:36.161Z  INFO 1612 --- [task-manager-cicd] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
+[2026-11-26T15:11:36.389Z] 2026-11-26T15:11:36.179Z  INFO 1612 --- [task-manager-cicd] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+[2026-11-26T15:11:36.389Z] 2026-11-26T15:11:36.179Z  INFO 1612 --- [task-manager-cicd] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.55]
+[2026-11-26T15:11:36.389Z] 2026-11-26T15:11:36.214Z  INFO 1612 --- [task-manager-cicd] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+[2026-11-26T15:11:36.389Z] 2026-11-26T15:11:36.215Z  INFO 1612 --- [task-manager-cicd] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1027 ms
+[2026-11-26T15:11:36.941Z] 2026-11-26T15:11:36.785Z  INFO 1612 --- [task-manager-cicd] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 44743 (http) with context path '/'
+[2026-11-26T15:11:36.941Z] 2026-11-26T15:11:36.793Z  INFO 1612 --- [task-manager-cicd] [           main] b.e.e.taskmanager.web.TaskControllerIT   : Started TaskControllerIT in 2.032 seconds (process running for 3.4)
+[2026-11-26T15:11:36.941Z] Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build as described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html#0.3
+[2026-11-26T15:11:37.192Z] WARNING: A Java agent has been loaded dynamically (/var/jenkins_home/.m2/repository/net/bytebuddy/byte-buddy-agent/1.17.8/byte-buddy-agent-1.17.8.jar)
+[2026-11-26T15:11:37.192Z] WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+[2026-11-26T15:11:37.192Z] WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+[2026-11-26T15:11:37.192Z] WARNING: Dynamic loading of agents will be disallowed by default in a future release
+[2026-11-26T15:11:38.106Z] 2026-11-26T15:11:37.719Z  INFO 1612 --- [task-manager-cicd] [o-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2026-11-26T15:11:38.106Z] 2026-11-26T15:11:37.719Z  INFO 1612 --- [task-manager-cicd] [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+[2026-11-26T15:11:38.106Z] 2026-11-26T15:11:37.720Z  INFO 1612 --- [task-manager-cicd] [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+[2026-11-26T15:11:38.106Z] [INFO] Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.952 s -- in by.edu.example.taskmanager.web.TaskControllerIT
+[2026-11-26T15:11:38.357Z] [INFO] 
+[2026-11-26T15:11:38.357Z] [INFO] Results:
+[2026-11-26T15:11:38.357Z] [INFO] 
+[2026-11-26T15:11:38.357Z] [INFO] Tests run: 11, Failures: 0, Errors: 0, Skipped: 0
+[2026-11-26T15:11:38.357Z] [INFO] 
+[2026-11-26T15:11:38.357Z] [INFO] 
+[2026-11-26T15:11:38.357Z] [INFO] --- failsafe:3.5.6:verify (default) @ task-manager-cicd ---
+[2026-11-26T15:11:38.357Z] [INFO] 
+[2026-11-26T15:11:38.357Z] [INFO] --- jacoco:0.8.15:report (report) @ task-manager-cicd ---
+[2026-11-26T15:11:38.357Z] [INFO] Loading execution data file /var/jenkins_home/jobs/Task-Manager-Variant2/workspace/target/jacoco.exec
+[2026-11-26T15:11:38.357Z] [INFO] Analyzed bundle 'task-manager-cicd' with 12 classes
+[2026-11-26T15:11:38.357Z] [INFO] ------------------------------------------------------------------------
+[2026-11-26T15:11:38.357Z] [INFO] BUILD SUCCESS
+[2026-11-26T15:11:38.357Z] [INFO] ------------------------------------------------------------------------
+[2026-11-26T15:11:38.357Z] [INFO] Total time:  9.158 s
+[2026-11-26T15:11:38.357Z] [INFO] Finished at: 2026-11-26T15:11:38Z
+[2026-11-26T15:11:38.357Z] [INFO] ------------------------------------------------------------------------
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Declarative: Post Actions)
+[Pipeline] script
+[Pipeline] {
+[Pipeline] junit
+[2026-11-26T15:11:38.709Z] Recording test results
+[2026-11-26T15:11:38.780Z] [Checks API] No suitable checks publisher found.
+[Pipeline] archiveArtifacts
+[2026-11-26T15:11:38.796Z] Archiving artifacts
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] script
+[Pipeline] {
+[Pipeline] archiveArtifacts
+[2026-11-26T15:11:38.871Z] Archiving artifacts
+[2026-11-26T15:11:38.880Z] Recording fingerprints
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] echo
+[2026-11-26T15:11:38.943Z] Проверка ветки main в режиме FULL завершена успешно
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // timestamps
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+Finished: SUCCESS

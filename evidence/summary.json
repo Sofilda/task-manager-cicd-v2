@@ -1,0 +1,476 @@
+[
+  {
+    "number": 1,
+    "params": {
+      "BRANCH": "main",
+      "CHECK_MODE": "FULL"
+    },
+    "result": "SUCCESS",
+    "duration_ms": 37088,
+    "description": "ветка main (259bfae), режим FULL",
+    "tests": {
+      "_class": "hudson.tasks.junit.TestResult",
+      "failCount": 0,
+      "passCount": 25,
+      "skipCount": 0
+    },
+    "stages": [
+      [
+        "Declarative: Tool Install",
+        "SUCCESS",
+        102
+      ],
+      [
+        "Validate Parameters",
+        "SUCCESS",
+        171
+      ],
+      [
+        "Checkout",
+        "SUCCESS",
+        1168
+      ],
+      [
+        "Toolchain",
+        "SUCCESS",
+        924
+      ],
+      [
+        "Compile",
+        "SUCCESS",
+        15220
+      ],
+      [
+        "Unit Tests",
+        "SUCCESS",
+        5672
+      ],
+      [
+        "Integration Tests and Package",
+        "SUCCESS",
+        10388
+      ],
+      [
+        "Declarative: Post Actions",
+        "SUCCESS",
+        278
+      ]
+    ],
+    "artifacts": [
+      "target/failsafe-reports/by.edu.example.taskmanager.web.TaskControllerIT.txt",
+      "target/failsafe-reports/failsafe-summary.xml",
+      "target/failsafe-reports/TEST-by.edu.example.taskmanager.web.TaskControllerIT.xml",
+      "target/site/jacoco/by.edu.example.taskmanager.dto/ApiError.html",
+      "target/site/jacoco/by.edu.example.taskmanager.dto/ApiError.java.html",
+      "target/site/jacoco/by.edu.example.taskmanager.dto/CreateTaskRequest.html",
+      "target/site/jacoco/by.edu.example.taskmanager.dto/CreateTaskRequest.java.html",
+      "target/site/jacoco/by.edu.example.taskmanager.dto/index.html",
+      "target/site/jacoco/by.edu.example.taskmanager.dto/index.source.html",
+      "target/site/jacoco/by.edu.example.taskmanager.dto/UpdateTaskPriorityRequest.html",
+      "target/site/jacoco/by.edu.example.taskmanager.dto/UpdateTaskPriorityRequest.java.html",
+      "target/site/jacoco/by.edu.example.taskmanager.dto/UpdateTaskStatusRequest.html",
+      "target/site/jacoco/by.edu.example.taskmanager.dto/UpdateTaskStatusRequest.java.html",
+      "target/site/jacoco/by.edu.example.taskmanager.exception/index.html",
+      "target/site/jacoco/by.edu.example.taskmanager.exception/index.source.html",
+      "target/site/jacoco/by.edu.example.taskmanager.exception/TaskNotFoundException.html",
+      "target/site/jacoco/by.edu.example.taskmanager.exception/TaskNotFoundException.java.html",
+      "target/site/jacoco/by.edu.example.taskmanager.model/index.html",
+      "target/site/jacoco/by.edu.example.taskmanager.model/index.source.html",
+      "target/site/jacoco/by.edu.example.taskmanager.model/Task.html",
+      "target/site/jacoco/by.edu.example.taskmanager.model/Task.java.html",
+      "target/site/jacoco/by.edu.example.taskmanager.model/TaskPriority.html",
+      "target/site/jacoco/by.edu.example.taskmanager.model/TaskPriority.java.html",
+      "target/site/jacoco/by.edu.example.taskmanager.model/TaskStatus.html",
+      "target/site/jacoco/by.edu.example.taskmanager.model/TaskStatus.java.html",
+      "target/site/jacoco/by.edu.example.taskmanager.service/index.html",
+      "target/site/jacoco/by.edu.example.taskmanager.service/index.source.html",
+      "target/site/jacoco/by.edu.example.taskmanager.service/TaskService.html",
+      "target/site/jacoco/by.edu.example.taskmanager.service/TaskService.java.html",
+      "target/site/jacoco/by.edu.example.taskmanager.web/ApiExceptionHandler.html",
+      "target/site/jacoco/by.edu.example.taskmanager.web/ApiExceptionHandler.java.html",
+      "target/site/jacoco/by.edu.example.taskmanager.web/index.html",
+      "target/site/jacoco/by.edu.example.taskmanager.web/index.source.html",
+      "target/site/jacoco/by.edu.example.taskmanager.web/JsonUtf8ResponseAdvice.html",
+      "target/site/jacoco/by.edu.example.taskmanager.web/JsonUtf8ResponseAdvice.java.html",
+      "target/site/jacoco/by.edu.example.taskmanager.web/TaskController.html",
+      "target/site/jacoco/by.edu.example.taskmanager.web/TaskController.java.html",
+      "target/site/jacoco/index.html",
+      "target/site/jacoco/jacoco-resources/branchfc.gif",
+      "target/site/jacoco/jacoco-resources/branchnc.gif",
+      "target/site/jacoco/jacoco-resources/branchpc.gif",
+      "target/site/jacoco/jacoco-resources/bundle.gif",
+      "target/site/jacoco/jacoco-resources/class.gif",
+      "target/site/jacoco/jacoco-resources/down.gif",
+      "target/site/jacoco/jacoco-resources/greenbar.gif",
+      "target/site/jacoco/jacoco-resources/group.gif",
+      "target/site/jacoco/jacoco-resources/method.gif",
+      "target/site/jacoco/jacoco-resources/package.gif",
+      "target/site/jacoco/jacoco-resources/prettify.css",
+      "target/site/jacoco/jacoco-resources/prettify.js",
+      "target/site/jacoco/jacoco-resources/redbar.gif",
+      "target/site/jacoco/jacoco-resources/report.css",
+      "target/site/jacoco/jacoco-resources/report.gif",
+      "target/site/jacoco/jacoco-resources/session.gif",
+      "target/site/jacoco/jacoco-resources/sort.gif",
+      "target/site/jacoco/jacoco-resources/sort.js",
+      "target/site/jacoco/jacoco-resources/source.gif",
+      "target/site/jacoco/jacoco-resources/up.gif",
+      "target/site/jacoco/jacoco-sessions.html",
+      "target/site/jacoco/jacoco.csv",
+      "target/site/jacoco/jacoco.xml",
+      "target/surefire-reports/by.edu.example.taskmanager.service.TaskServiceTest.txt",
+      "target/surefire-reports/TEST-by.edu.example.taskmanager.service.TaskServiceTest.xml",
+      "target/task-manager-cicd-1.0.0.jar"
+    ]
+  },
+  {
+    "number": 2,
+    "params": {
+      "BRANCH": "main",
+      "CHECK_MODE": "UNIT"
+    },
+    "result": "SUCCESS",
+    "duration_ms": 8170,
+    "description": "ветка main (259bfae), режим UNIT",
+    "tests": {
+      "_class": "hudson.tasks.junit.TestResult",
+      "failCount": 0,
+      "passCount": 14,
+      "skipCount": 0
+    },
+    "stages": [
+      [
+        "Declarative: Tool Install",
+        "SUCCESS",
+        34
+      ],
+      [
+        "Validate Parameters",
+        "SUCCESS",
+        95
+      ],
+      [
+        "Checkout",
+        "SUCCESS",
+        621
+      ],
+      [
+        "Toolchain",
+        "SUCCESS",
+        852
+      ],
+      [
+        "Compile",
+        "SUCCESS",
+        2653
+      ],
+      [
+        "Unit Tests",
+        "SUCCESS",
+        2960
+      ],
+      [
+        "Integration Tests and Package",
+        "NOT_EXECUTED",
+        93
+      ],
+      [
+        "Declarative: Post Actions",
+        "SUCCESS",
+        90
+      ]
+    ],
+    "artifacts": [
+      "target/surefire-reports/by.edu.example.taskmanager.service.TaskServiceTest.txt",
+      "target/surefire-reports/TEST-by.edu.example.taskmanager.service.TaskServiceTest.xml"
+    ]
+  },
+  {
+    "number": 3,
+    "params": {
+      "BRANCH": "main",
+      "CHECK_MODE": "COMPILE"
+    },
+    "result": "SUCCESS",
+    "duration_ms": 4952,
+    "description": "ветка main (259bfae), режим COMPILE",
+    "tests": null,
+    "stages": [
+      [
+        "Declarative: Tool Install",
+        "SUCCESS",
+        50
+      ],
+      [
+        "Validate Parameters",
+        "SUCCESS",
+        106
+      ],
+      [
+        "Checkout",
+        "SUCCESS",
+        605
+      ],
+      [
+        "Toolchain",
+        "SUCCESS",
+        844
+      ],
+      [
+        "Compile",
+        "SUCCESS",
+        2648
+      ],
+      [
+        "Unit Tests",
+        "NOT_EXECUTED",
+        27
+      ],
+      [
+        "Integration Tests and Package",
+        "NOT_EXECUTED",
+        22
+      ],
+      [
+        "Declarative: Post Actions",
+        "SUCCESS",
+        93
+      ]
+    ],
+    "artifacts": []
+  },
+  {
+    "number": 4,
+    "params": {
+      "BRANCH": "feature/extra-test",
+      "CHECK_MODE": "FULL"
+    },
+    "result": "SUCCESS",
+    "duration_ms": 15230,
+    "description": "ветка feature/extra-test (d234eb7), режим FULL",
+    "tests": {
+      "_class": "hudson.tasks.junit.TestResult",
+      "failCount": 0,
+      "passCount": 26,
+      "skipCount": 0
+    },
+    "stages": [
+      [
+        "Declarative: Tool Install",
+        "SUCCESS",
+        46
+      ],
+      [
+        "Validate Parameters",
+        "SUCCESS",
+        99
+      ],
+      [
+        "Checkout",
+        "SUCCESS",
+        630
+      ],
+      [
+        "Toolchain",
+        "SUCCESS",
+        841
+      ],
+      [
+        "Compile",
+        "SUCCESS",
+        2644
+      ],
+      [
+        "Unit Tests",
+        "SUCCESS",
+        2904
+      ],
+      [
+        "Integration Tests and Package",
+        "SUCCESS",
+        7339
+      ],
+      [
+        "Declarative: Post Actions",
+        "SUCCESS",
+        182
+      ]
+    ],
+    "artifacts": [
+      "target/failsafe-reports/by.edu.example.taskmanager.web.TaskControllerIT.txt",
+      "target/failsafe-reports/failsafe-summary.xml",
+      "target/failsafe-reports/TEST-by.edu.example.taskmanager.web.TaskControllerIT.xml",
+      "target/site/jacoco/by.edu.example.taskmanager.dto/ApiError.html",
+      "target/site/jacoco/by.edu.example.taskmanager.dto/ApiError.java.html",
+      "target/site/jacoco/by.edu.example.taskmanager.dto/CreateTaskRequest.html",
+      "target/site/jacoco/by.edu.example.taskmanager.dto/CreateTaskRequest.java.html",
+      "target/site/jacoco/by.edu.example.taskmanager.dto/index.html",
+      "target/site/jacoco/by.edu.example.taskmanager.dto/index.source.html",
+      "target/site/jacoco/by.edu.example.taskmanager.dto/UpdateTaskPriorityRequest.html",
+      "target/site/jacoco/by.edu.example.taskmanager.dto/UpdateTaskPriorityRequest.java.html",
+      "target/site/jacoco/by.edu.example.taskmanager.dto/UpdateTaskStatusRequest.html",
+      "target/site/jacoco/by.edu.example.taskmanager.dto/UpdateTaskStatusRequest.java.html",
+      "target/site/jacoco/by.edu.example.taskmanager.exception/index.html",
+      "target/site/jacoco/by.edu.example.taskmanager.exception/index.source.html",
+      "target/site/jacoco/by.edu.example.taskmanager.exception/TaskNotFoundException.html",
+      "target/site/jacoco/by.edu.example.taskmanager.exception/TaskNotFoundException.java.html",
+      "target/site/jacoco/by.edu.example.taskmanager.model/index.html",
+      "target/site/jacoco/by.edu.example.taskmanager.model/index.source.html",
+      "target/site/jacoco/by.edu.example.taskmanager.model/Task.html",
+      "target/site/jacoco/by.edu.example.taskmanager.model/Task.java.html",
+      "target/site/jacoco/by.edu.example.taskmanager.model/TaskPriority.html",
+      "target/site/jacoco/by.edu.example.taskmanager.model/TaskPriority.java.html",
+      "target/site/jacoco/by.edu.example.taskmanager.model/TaskStatus.html",
+      "target/site/jacoco/by.edu.example.taskmanager.model/TaskStatus.java.html",
+      "target/site/jacoco/by.edu.example.taskmanager.service/index.html",
+      "target/site/jacoco/by.edu.example.taskmanager.service/index.source.html",
+      "target/site/jacoco/by.edu.example.taskmanager.service/TaskService.html",
+      "target/site/jacoco/by.edu.example.taskmanager.service/TaskService.java.html",
+      "target/site/jacoco/by.edu.example.taskmanager.web/ApiExceptionHandler.html",
+      "target/site/jacoco/by.edu.example.taskmanager.web/ApiExceptionHandler.java.html",
+      "target/site/jacoco/by.edu.example.taskmanager.web/index.html",
+      "target/site/jacoco/by.edu.example.taskmanager.web/index.source.html",
+      "target/site/jacoco/by.edu.example.taskmanager.web/JsonUtf8ResponseAdvice.html",
+      "target/site/jacoco/by.edu.example.taskmanager.web/JsonUtf8ResponseAdvice.java.html",
+      "target/site/jacoco/by.edu.example.taskmanager.web/TaskController.html",
+      "target/site/jacoco/by.edu.example.taskmanager.web/TaskController.java.html",
+      "target/site/jacoco/index.html",
+      "target/site/jacoco/jacoco-resources/branchfc.gif",
+      "target/site/jacoco/jacoco-resources/branchnc.gif",
+      "target/site/jacoco/jacoco-resources/branchpc.gif",
+      "target/site/jacoco/jacoco-resources/bundle.gif",
+      "target/site/jacoco/jacoco-resources/class.gif",
+      "target/site/jacoco/jacoco-resources/down.gif",
+      "target/site/jacoco/jacoco-resources/greenbar.gif",
+      "target/site/jacoco/jacoco-resources/group.gif",
+      "target/site/jacoco/jacoco-resources/method.gif",
+      "target/site/jacoco/jacoco-resources/package.gif",
+      "target/site/jacoco/jacoco-resources/prettify.css",
+      "target/site/jacoco/jacoco-resources/prettify.js",
+      "target/site/jacoco/jacoco-resources/redbar.gif",
+      "target/site/jacoco/jacoco-resources/report.css",
+      "target/site/jacoco/jacoco-resources/report.gif",
+      "target/site/jacoco/jacoco-resources/session.gif",
+      "target/site/jacoco/jacoco-resources/sort.gif",
+      "target/site/jacoco/jacoco-resources/sort.js",
+      "target/site/jacoco/jacoco-resources/source.gif",
+      "target/site/jacoco/jacoco-resources/up.gif",
+      "target/site/jacoco/jacoco-sessions.html",
+      "target/site/jacoco/jacoco.csv",
+      "target/site/jacoco/jacoco.xml",
+      "target/surefire-reports/by.edu.example.taskmanager.service.TaskServiceExtraTest.txt",
+      "target/surefire-reports/by.edu.example.taskmanager.service.TaskServiceTest.txt",
+      "target/surefire-reports/TEST-by.edu.example.taskmanager.service.TaskServiceExtraTest.xml",
+      "target/surefire-reports/TEST-by.edu.example.taskmanager.service.TaskServiceTest.xml",
+      "target/task-manager-cicd-1.0.0.jar"
+    ]
+  },
+  {
+    "number": 5,
+    "params": {
+      "BRANCH": "no-such-branch",
+      "CHECK_MODE": "FULL"
+    },
+    "result": "FAILURE",
+    "duration_ms": 1092,
+    "description": "ветка no-such-branch, режим FULL",
+    "tests": null,
+    "stages": [
+      [
+        "Declarative: Tool Install",
+        "SUCCESS",
+        40
+      ],
+      [
+        "Validate Parameters",
+        "SUCCESS",
+        88
+      ],
+      [
+        "Checkout",
+        "FAILED",
+        343
+      ],
+      [
+        "Toolchain",
+        "FAILED",
+        22
+      ],
+      [
+        "Compile",
+        "FAILED",
+        17
+      ],
+      [
+        "Unit Tests",
+        "FAILED",
+        16
+      ],
+      [
+        "Integration Tests and Package",
+        "FAILED",
+        13
+      ],
+      [
+        "Declarative: Post Actions",
+        "SUCCESS",
+        38
+      ]
+    ],
+    "artifacts": []
+  },
+  {
+    "number": 6,
+    "params": {
+      "BRANCH": "main; echo hacked",
+      "CHECK_MODE": "FULL"
+    },
+    "result": "FAILURE",
+    "duration_ms": 768,
+    "description": null,
+    "tests": null,
+    "stages": [
+      [
+        "Declarative: Tool Install",
+        "SUCCESS",
+        41
+      ],
+      [
+        "Validate Parameters",
+        "FAILED",
+        90
+      ],
+      [
+        "Checkout",
+        "FAILED",
+        14
+      ],
+      [
+        "Toolchain",
+        "FAILED",
+        14
+      ],
+      [
+        "Compile",
+        "FAILED",
+        12
+      ],
+      [
+        "Unit Tests",
+        "FAILED",
+        13
+      ],
+      [
+        "Integration Tests and Package",
+        "FAILED",
+        14
+      ],
+      [
+        "Declarative: Post Actions",
+        "SUCCESS",
+        33
+      ]
+    ],
+    "artifacts": []
+  }
+]
